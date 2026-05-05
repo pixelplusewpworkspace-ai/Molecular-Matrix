@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Molecular Matrix. Connect with our bio-science digital architects for high-risk e-commerce solutions.">
+    <title>Contact Us | Molecular Matrix</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS / Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        labBlue: '#142114',
+                        labAccent: '#1a6330',
+                        labLight: '#ede8c6',
+                        labDark: '#000000',
+                    },
+                    fontFamily: {
+                        playfair: ['Playfair Display', 'serif'],
+                        space: ['Space Grotesk', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        #main-nav.nav-scrolled {
+            background: rgba(237, 232, 198, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(58, 86, 56, 0.08);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.04);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: #1a6330;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #1a6330 !important;
+            outline: none;
+        }
+
+        .service-option.selected {
+            background-color: #1a6330;
+            border-color: #1a6330;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-labLight text-labBlue font-space overflow-x-hidden text-sm">
+
+    <!-- Top Pipeline Bar -->
+    <div class="fixed top-0 left-0 w-full z-[60] bg-[#0c140e] text-[9px] text-white/50 py-1.5 overflow-hidden font-space uppercase tracking-widest border-b border-white/5">
+        <div class="animate-ticker">
+            <div class="flex items-center space-x-12 px-6">
+                <div class="flex items-center space-x-2"><span class="bg-green-500 w-1.5 h-1.5 rounded-full animate-pulse"></span><span class="text-white font-bold">LIVE</span> <span class="text-green-400">PIPELINE</span></div>
+                <div>Outpost HQ <span class="text-white">14 decision makers mapped</span></div>
+                <div>Harbor Health <span class="text-white">pain point analysis - 5.9s</span></div>
+                <div>TravelArrow <span class="text-white">38 leads found <span class="text-green-400">+$420K
+                            PIPELINE</span></span></div>
+                <div>FIELDSTACK <span class="text-white">SEQUENCE LIVE - 11.8S</span></div>
+                <div>CASCADE GTM <span class="text-white">178 LEADS SCORED</span></div>
+            </div>
+            <!-- Duplicated for seamless loop -->
+            <div class="flex items-center space-x-12 px-6">
+                <div class="flex items-center space-x-2"><span
+                        class="bg-green-500 w-1.5 h-1.5 rounded-full animate-pulse"></span><span
+                        class="text-white font-bold">LIVE</span> <span class="text-green-400">PIPELINE</span></div>
+                <div>Outpost HQ <span class="text-white">14 decision makers mapped</span></div>
+                <div>Harbor Health <span class="text-white">pain point analysis - 5.9s</span></div>
+                <div>TravelArrow <span class="text-white">38 leads found <span class="text-green-400">+$420K
+                            PIPELINE</span></span></div>
+                <div>FIELDSTACK <span class="text-white">SEQUENCE LIVE - 11.8S</span></div>
+                <div>CASCADE GTM <span class="text-white">178 LEADS SCORED</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-[28px] left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-4 transition-all duration-500 bg-labLight border-b border-[#3A5638]/5">
+        <a href="index.html" class="flex items-center space-x-2">
+            <span class="font-playfair font-bold text-xl text-labBlue">Molecular <span class="italic text-labAccent">Matrix</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-[13px] font-medium text-labBlue/80">
+            <a href="index.html#mirror" class="nav-link hover:text-labAccent transition-colors relative">Pain Points</a>
+            <a href="index.html#solution" class="nav-link hover:text-labAccent transition-colors relative">Solution</a>
+            <a href="index.html#services" class="nav-link hover:text-labAccent transition-colors relative">Services</a>
+            <a href="index.html#authority" class="nav-link hover:text-labAccent transition-colors relative">Why Us</a>
+            <a href="use-cases.html" class="matrix-btn bg-[#3A5638] text-[#f4f2dd] border border-[#3A5638] px-6 py-2 rounded-sm hover:text-white transition-all text-xs font-bold tracking-wider uppercase">Use Cases</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-btn" class="p-2"><i data-lucide="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-labLight z-[100] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-8 md:hidden">
+        <!-- Menu Header -->
+        <div class="flex items-center justify-between mb-16">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="font-playfair font-bold text-2xl text-labBlue">Molecular <span class="italic text-labAccent">Matrix</span></span>
+            </a>
+            <button id="mobile-menu-close" class="p-2 bg-labBlue/5 rounded-full"><i data-lucide="x" class="w-6 h-6"></i></button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="flex flex-col space-y-6 mb-auto">
+            <a href="index.html#mirror" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Pain Points</a>
+            <a href="index.html#solution" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Solution</a>
+            <a href="index.html#services" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Services</a>
+            <a href="index.html#authority" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Why Us</a>
+            <a href="use-cases.html" class="text-lg font-bold text-labAccent border-b-2 border-labAccent/20 pb-2 inline-block tracking-[0.2em] uppercase">Use Cases</a>
+        </div>
+
+        <!-- Menu Footer -->
+        <div class="pt-8 border-t border-labBlue/10">
+            <p class="text-[10px] font-bold text-labBlue/40 uppercase tracking-[0.3em] mb-4">Contact Protocol</p>
+            <a href="mailto:support@molecularmatrix.online" class="text-base font-medium text-labBlue underline decoration-labAccent/30 mb-8 block font-space">support@molecularmatrix.online</a>
+            
+            <div class="flex space-x-5">
+                <a href="#" class="w-10 h-10 rounded-full bg-labBlue/5 flex items-center justify-center text-labBlue hover:bg-labAccent hover:text-white transition-all">
+                    <i data-lucide="facebook" class="w-5 h-5"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-labBlue/5 flex items-center justify-center text-labBlue hover:bg-labAccent hover:text-white transition-all">
+                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-labBlue/5 flex items-center justify-center text-labBlue hover:bg-labAccent hover:text-white transition-all">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <main class="pt-32 md:pt-48 pb-16 md:pb-24 px-6 md:px-12 bg-labLight">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            
+            <div>
+                <div class="inline-flex items-center space-x-3 text-labAccent font-space text-[10px] tracking-[0.3em] font-bold uppercase mb-6">
+                    <span class="w-2 h-2 bg-labAccent rounded-full"></span>
+                    <span>[ SYSTEM_INTERFACE: CONTACT_PORTAL ]</span>
+                </div>
+                <h1 class="font-playfair font-bold text-4xl md:text-7xl text-labBlue mb-8 leading-tight">Get in touch.</h1>
+                <p class="text-[#3A5638] font-space text-lg max-w-md leading-relaxed mb-12">
+                    Ready to scale your bio-science brand without processing friction? Let's engineer your growth.
+                </p>
+
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-white border border-[#3A5638]/10 rounded-sm flex items-center justify-center shrink-0">
+                            <i data-lucide="mail" class="w-5 h-5 text-labAccent"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-bold text-labAccent uppercase tracking-widest mb-1">Email Inquiry</div>
+                            <a href="mailto:support@molecularmatrix.online" class="text-sm md:text-xl font-playfair font-bold text-labBlue hover:text-labAccent transition-colors break-all">support@molecularmatrix.online</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-white border border-[#3A5638]/10 rounded-sm flex items-center justify-center shrink-0">
+                            <i data-lucide="clock" class="w-5 h-5 text-labAccent"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-bold text-labAccent uppercase tracking-widest mb-1">Response Time</div>
+                            <div class="text-xl font-playfair font-bold text-labBlue">Within 24 Hours</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/40 p-6 md:p-12 border border-[#3A5638]/10 rounded-sm shadow-xl backdrop-blur-sm relative overflow-hidden">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold text-labAccent uppercase tracking-widest">Full Name</label>
+                            <input type="text" name="full_name" placeholder="John Doe" required data-fs-field class="w-full bg-white border border-black/5 px-4 py-3 text-sm rounded-sm">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold text-labAccent uppercase tracking-widest">Email Address</label>
+                            <input type="email" name="email" placeholder="john@example.com" required data-fs-field class="w-full bg-white border border-black/5 px-4 py-3 text-sm rounded-sm">
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold text-labAccent uppercase tracking-widest">Store URL / Business (Optional)</label>
+                        <input type="text" name="store_url" placeholder="https://yourstore.com" data-fs-field class="w-full bg-white border border-black/5 px-4 py-3 text-sm rounded-sm">
+                    </div>
+
+                    <!-- Service Selection Grid -->
+                    <div class="space-y-4">
+                        <label class="text-[10px] font-bold text-labAccent uppercase tracking-widest">Select Services Required</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <label class="service-option relative flex items-center justify-center p-3 border border-black/10 rounded-sm cursor-pointer hover:bg-labAccent/5 transition-all text-center">
+                                <input type="checkbox" name="service" value="Payment Gateway" class="sr-only">
+                                <span class="text-[9px] font-bold uppercase tracking-tight">Payment Gateway</span>
+                            </label>
+                            <label class="service-option relative flex items-center justify-center p-3 border border-black/10 rounded-sm cursor-pointer hover:bg-labAccent/5 transition-all text-center">
+                                <input type="checkbox" name="service" value="Web Redesign" class="sr-only">
+                                <span class="text-[9px] font-bold uppercase tracking-tight">Web Redesign</span>
+                            </label>
+                            <label class="service-option relative flex items-center justify-center p-3 border border-black/10 rounded-sm cursor-pointer hover:bg-labAccent/5 transition-all text-center">
+                                <input type="checkbox" name="service" value="SEO" class="sr-only">
+                                <span class="text-[9px] font-bold uppercase tracking-tight">SEO Optimization</span>
+                            </label>
+                            <label class="service-option relative flex items-center justify-center p-3 border border-black/10 rounded-sm cursor-pointer hover:bg-labAccent/5 transition-all text-center">
+                                <input type="checkbox" name="service" value="Ads" class="sr-only">
+                                <span class="text-[9px] font-bold uppercase tracking-tight">Ads Management</span>
+                            </label>
+                            <label class="service-option relative flex items-center justify-center p-3 border border-black/10 rounded-sm cursor-pointer hover:bg-labAccent/5 transition-all text-center">
+                                <input type="checkbox" name="service" value="FDA Compliance" class="sr-only">
+                                <span class="text-[9px] font-bold uppercase tracking-tight">FDA Compliance</span>
+                            </label>
+                            <label class="service-option relative flex items-center justify-center p-3 border border-black/10 rounded-sm cursor-pointer hover:bg-labAccent/5 transition-all text-center">
+                                <input type="checkbox" name="service" value="Full Build" class="sr-only">
+                                <span class="text-[9px] font-bold uppercase tracking-tight">Full Build (Start from Scratch)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold text-labAccent uppercase tracking-widest">Message / Details</label>
+                        <textarea name="message" rows="4" placeholder="Briefly describe your requirements..." class="w-full bg-white border border-black/5 px-4 py-3 text-sm rounded-sm"></textarea>
+                    </div>
+                    <button type="submit" data-fs-submit-btn class="matrix-btn w-full bg-[#1a6330] text-white py-4 font-bold text-sm hover:bg-[#124a23] transition-all flex items-center justify-center space-x-2">
+                        <span>Send Transmission</span>
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </form>
+
+                <!-- Success Message Overlay -->
+                <div id="contact-success" class="absolute inset-0 bg-labLight z-[30] flex flex-col items-center justify-center p-8 text-center opacity-0 pointer-events-none transition-all duration-500 border border-labAccent/20">
+                    <div class="w-16 h-16 bg-labAccent/10 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="check-circle" class="w-8 h-8 text-labAccent"></i>
+                    </div>
+                    <h3 class="font-playfair font-bold text-2xl text-labBlue mb-4">Transmission Received</h3>
+                    <p class="text-[13px] text-[#3A5638]/70 leading-relaxed max-w-xs">
+                        Our architects have received your protocol request. We will initiate a synchronization within 24 hours.
+                    </p>
+                    <button onclick="window.location.reload()" class="mt-8 text-[10px] font-bold text-labAccent uppercase tracking-[0.2em] hover:underline underline-offset-4">Send another message</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-[#ebe6cc] border-t border-[#3A5638]/10 py-10">
+        <div class="px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-[#3A5638]/70">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <a href="index.html" class="flex items-center justify-center md:justify-start space-x-2 mb-2">
+                    <span class="font-playfair font-bold text-xl text-labBlue">Molecular <span class="italic text-labAccent">Matrix</span></span>
+                </a>
+                <a href="mailto:support@molecularmatrix.online" class="underline text-[#3A5638]/90 text-[13px]">support@molecularmatrix.online</a>
+            </div>
+            
+            <div class="flex space-x-8 mb-6 md:mb-0 justify-center font-space text-[13px] font-medium">
+                <a href="privacy.html" class="hover:text-labAccent transition-colors">Privacy</a>
+                <a href="contact.html" class="hover:text-labAccent transition-colors">Contact</a>
+                <a href="terms.html" class="hover:text-labAccent transition-colors">Terms</a>
+            </div>
+            
+            <div class="text-center md:text-right font-space text-[13px]">
+                © 2026 Molecular Matrix
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 20) nav.classList.add('nav-scrolled');
+            else nav.classList.remove('nav-scrolled');
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileClose = document.getElementById('mobile-menu-close');
+        
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+            });
+        }
+        
+        if (mobileClose) {
+            mobileClose.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        }
+
+        // Close menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Service Selection Toggle
+        document.querySelectorAll('.service-option').forEach(option => {
+            const input = option.querySelector('input');
+            option.addEventListener('click', () => {
+                input.checked = !input.checked;
+                option.classList.toggle('selected', input.checked);
+            });
+        });
+
+        // Formspree Integration
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { 
+            formElement: '#contact-form', 
+            formId: 'mykowvao',
+            onSuccess: function() {
+                const successMsg = document.getElementById('contact-success');
+                if (successMsg) {
+                    successMsg.classList.remove('opacity-0', 'pointer-events-none');
+                    successMsg.classList.add('opacity-100');
+                }
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+/* Custom Stylesheet for Molecular Matrix */
+
+:root {
+  --accent-glow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Active tab state updates */
+.active-tab {
+  border-color: #1a6330 !important;
+  background-color: #ede8c6 !important;
+  box-shadow: 2px 2px 0px #1a6330;
+}
+
+.viz-slide.active-slide {
+  opacity: 1 !important;
+  z-index: 5;
+}
+
+/* Lab Grid Background using CSS Grid-Dotted styling (Subtle Gray) */
+.lab-grid-bg {
+  background-image: 
+    radial-gradient(#000000 1px, transparent 1px),
+    radial-gradient(#000000 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+/* Custom Cursor Tracker (Optional support) */
+.custom-cursor {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #1a6330;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+/* Keyframe for hover glow */
+@keyframes glow-pulse {
+  0% { box-shadow: 0 0 5px rgba(0, 212, 255, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(0, 212, 255, 0.5); }
+  100% { box-shadow: 0 0 5px rgba(0, 212, 255, 0.2); }
+}
+
+.lab-panel-hover:hover {
+  animation: glow-pulse 2s infinite;
+}
+
+/* Smooth Canvas Background Frame */
+canvas {
+  filter: blur(0.2px); /* Makes connections look like continuous glow vectors */
+}
+
+/* Scroll Trigger Trigger Classes */
+.scale-reveal {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease;
+}
+
+.fade-reveal {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease;
+}
+
+body {
+  cursor: crosshair; /* Laboratory Scope vibe */
+  background-color: #ede8c6;
+}
+
+/* Pipeline Ticker Animation */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 30s linear infinite;
+}
+
+/* Washington Card Specifics */
+.oval-frame {
+  clip-path: ellipse(50% 50% at 50% 50%);
+}
+
+.money-card-shadow {
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Global Button Styles (Matrix Hover Effect) */
+.matrix-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.matrix-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+}
+
+.matrix-btn:hover::after {
+  transform: translateY(0);
+}
+
+.matrix-btn > * {
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.matrix-btn:hover i[data-lucide="arrow-right"],
+.matrix-btn:hover i[data-lucide="send"],
+.matrix-btn:hover i[data-lucide="shield-check"] {
+  transform: translateX(4px);
+}
