@@ -7,6 +7,14 @@
     <meta name="description" content="Terms of Service - Molecular Matrix. Specialised E-Commerce Development for the Peptide and Bio-Science sector.">
     <title>Terms of Service | Molecular Matrix</title>
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="canonical" href="https://molecularmatrix.online/terms">
+
+    <script>
+        // Redirect terms.html to /terms
+        if (window.location.pathname.endsWith('/terms.html')) {
+            window.location.replace(window.location.pathname.replace(/\/terms\.html$/, '/terms'));
+        }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +23,7 @@
 
     <!-- CSS / Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
@@ -92,15 +100,15 @@
 
     <!-- Navigation -->
     <nav id="main-nav" class="fixed top-[28px] left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-4 transition-all duration-500 bg-labLight border-b border-[#3A5638]/5">
-        <a href="index.html" class="flex items-center space-x-2">
+        <a href="/" class="flex items-center space-x-2">
             <span class="font-playfair font-bold text-xl text-labBlue">Molecular <span class="italic text-labAccent">Matrix</span></span>
         </a>
         <div class="hidden md:flex items-center space-x-8 text-[13px] font-medium text-labBlue/80">
-            <a href="index.html#mirror" class="nav-link hover:text-labAccent transition-colors relative">Pain Points</a>
-            <a href="index.html#solution" class="nav-link hover:text-labAccent transition-colors relative">Solution</a>
-            <a href="index.html#services" class="nav-link hover:text-labAccent transition-colors relative">Services</a>
-            <a href="index.html#authority" class="nav-link hover:text-labAccent transition-colors relative">Why Us</a>
-            <a href="use-cases.html" class="matrix-btn bg-[#3A5638] text-[#f4f2dd] border border-[#3A5638] px-6 py-2 rounded-sm hover:text-white transition-all text-xs font-bold tracking-wider uppercase">Use Cases</a>
+            <a href="/#mirror" class="nav-link hover:text-labAccent transition-colors relative">Pain Points</a>
+            <a href="/#solution" class="nav-link hover:text-labAccent transition-colors relative">Solution</a>
+            <a href="/#services" class="nav-link hover:text-labAccent transition-colors relative">Services</a>
+            <a href="/#authority" class="nav-link hover:text-labAccent transition-colors relative">Why Us</a>
+            <a href="/use-cases" class="matrix-btn bg-[#3A5638] text-[#f4f2dd] border border-[#3A5638] px-6 py-2 rounded-sm hover:text-white transition-all text-xs font-bold tracking-wider uppercase">Use Cases</a>
         </div>
         <div class="md:hidden">
             <button id="mobile-menu-btn" class="p-2"><i data-lucide="menu"></i></button>
@@ -112,7 +120,7 @@
         class="fixed inset-0 bg-labLight z-[100] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-8 md:hidden">
         <!-- Menu Header -->
         <div class="flex items-center justify-between mb-16">
-            <a href="index.html" class="flex items-center space-x-2">
+            <a href="/" class="flex items-center space-x-2">
                 <span class="font-playfair font-bold text-2xl text-labBlue">Molecular <span class="italic text-labAccent">Matrix</span></span>
             </a>
             <button id="mobile-menu-close" class="p-2 bg-labBlue/5 rounded-full"><i data-lucide="x" class="w-6 h-6"></i></button>
@@ -120,11 +128,11 @@
 
         <!-- Navigation Links -->
         <div class="flex flex-col space-y-6 mb-auto">
-            <a href="index.html#mirror" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Pain Points</a>
-            <a href="index.html#solution" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Solution</a>
-            <a href="index.html#services" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Services</a>
-            <a href="index.html#authority" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Why Us</a>
-            <a href="use-cases.html" class="text-lg font-bold text-labAccent border-b-2 border-labAccent/20 pb-2 inline-block tracking-[0.2em] uppercase">Use Cases</a>
+            <a href="/#mirror" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Pain Points</a>
+            <a href="/#solution" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Solution</a>
+            <a href="/#services" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Services</a>
+            <a href="/#authority" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Why Us</a>
+            <a href="/use-cases" class="text-lg font-bold text-labAccent border-b-2 border-labAccent/20 pb-2 inline-block tracking-[0.2em] uppercase">Use Cases</a>
         </div>
 
         <!-- Menu Footer -->
@@ -193,16 +201,16 @@
     <footer class="w-full bg-[#ebe6cc] border-t border-[#3A5638]/10 py-10">
         <div class="px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-[#3A5638]/70">
             <div class="mb-6 md:mb-0 text-center md:text-left">
-                <a href="index.html" class="flex items-center justify-center md:justify-start space-x-2 mb-2">
+                <a href="/" class="flex items-center justify-center md:justify-start space-x-2 mb-2">
                     <span class="font-playfair font-bold text-xl text-labBlue">Molecular <span class="italic text-labAccent">Matrix</span></span>
                 </a>
                 <a href="mailto:support@molecularmatrix.online" class="underline text-[#3A5638]/90 text-[13px]">support@molecularmatrix.online</a>
             </div>
             
             <div class="flex space-x-8 mb-6 md:mb-0 justify-center font-space text-[13px] font-medium">
-                <a href="privacy.html" class="hover:text-labAccent transition-colors">Privacy</a>
-                <a href="contact.html" class="hover:text-labAccent transition-colors">Contact</a>
-                <a href="terms.html" class="hover:text-labAccent transition-colors">Terms</a>
+                <a href="/privacy" class="hover:text-labAccent transition-colors">Privacy</a>
+                <a href="/contact" class="hover:text-labAccent transition-colors">Contact</a>
+                <a href="/terms" class="hover:text-labAccent transition-colors">Terms</a>
             </div>
             
             <div class="text-center md:text-right font-space text-[13px]">
