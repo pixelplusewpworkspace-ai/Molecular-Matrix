@@ -160,23 +160,29 @@
         content="Niche eCommerce development agency for peptide and research chemical suppliers.">
     <meta property="og:type" content="website">
 
-    <!-- Fonts -->
+    <!-- Preloads for Performance Optimization (LCP) - Desktop Only to save mobile bandwidth -->
+    <link rel="preload" as="image" href="washington.webp" fetchpriority="high" media="(min-width: 1024px)">
+    <link rel="preload" as="script" href="https://cdn.tailwindcss.com">
+
+    <!-- Fonts - Asynchronous Non-Blocking Loading Pattern -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap">
+    </noscript>
 
     <!-- CSS / Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <!-- GSAP for Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
     <script>
         tailwind.config = {
@@ -245,11 +251,11 @@
             font-weight: 600;
         }
 
-        /* Hero Fade Up */
+        /* Snappy Hero Fade Up Animations to optimize mobile FCP & LCP */
         @keyframes heroFadeUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(15px);
             }
             to {
                 opacity: 1;
@@ -258,14 +264,14 @@
         }
         .hero-fade-up {
             opacity: 0;
-            animation: heroFadeUp 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: heroFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-        .hero-delay-1 { animation-delay: 0.3s; }
-        .hero-delay-2 { animation-delay: 0.7s; }
-        .hero-delay-3 { animation-delay: 1.1s; }
-        .hero-delay-4 { animation-delay: 1.5s; }
-        .hero-delay-5 { animation-delay: 1.9s; }
-        .hero-delay-6 { animation-delay: 0.9s; }
+        .hero-delay-1 { animation-delay: 0.02s; }
+        .hero-delay-2 { animation-delay: 0.05s; }
+        .hero-delay-3 { animation-delay: 0.08s; }
+        .hero-delay-4 { animation-delay: 0.1s; }
+        .hero-delay-5 { animation-delay: 0.12s; }
+        .hero-delay-6 { animation-delay: 0.1s; }
     </style>
 </head>
 
@@ -386,22 +392,53 @@
                         Stop worrying about bans and start processing sales instantly.
                     </p>
 
-                    <!-- Input Group (Formspree Integration) -->
-                    <form id="hero-form" class="hero-fade-up hero-delay-4 flex flex-col sm:flex-row max-w-md shadow-2xl shadow-black/5 relative overflow-hidden">
-                        <input type="text" name="store_url" placeholder="Your existing store URL" required data-fs-field
-                            class="flex-grow bg-white/40 border border-black/10 px-6 py-4 text-sm focus:outline-none focus:border-labAccent">
-                        <button type="submit" data-fs-submit-btn
-                            class="matrix-btn bg-[#1a6330] text-white px-8 py-4 font-bold text-sm hover:bg-[#124a23] transition-all flex items-center justify-center space-x-2">
-                            <span>Get Free Audit</span>
-                            <i data-lucide="shield-check" class="w-4 h-4"></i>
-                        </button>
-
-                        <!-- Success Message Overlay -->
-                        <div id="hero-success-custom" class="absolute inset-0 bg-[#f4f2dd] z-[30] flex items-center justify-center space-x-3 text-labAccent font-bold text-xs tracking-widest opacity-0 pointer-events-none transition-all duration-500 border border-labAccent/20">
-                            <i data-lucide="check-circle" class="w-4 h-4"></i>
-                            <span>AUDIT REQUEST DISPATCHED</span>
+                    <!-- Input Group (Formspree Integration - Multi-step Audit Form) -->
+                    <div class="hero-fade-up hero-delay-4 max-w-md w-full relative">
+                        <!-- Tooltip Hint Bubble -->
+                        <div id="audit-tooltip" class="absolute -top-10 left-4 bg-labAccent/95 text-white text-[9px] font-bold tracking-wider uppercase px-3 py-1.5 rounded-sm shadow-md flex items-center space-x-1.5 transition-all duration-500 transform translate-y-2 opacity-0 pointer-events-none z-40">
+                            <i data-lucide="info" class="w-3.5 h-3.5 text-[#f4f2dd]"></i>
+                            <span>To deliver your audit results</span>
+                            <!-- Triangle pointer -->
+                            <div class="absolute top-full left-6 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-labAccent/95"></div>
                         </div>
-                    </form>
+
+                        <form id="hero-form" class="flex flex-col sm:flex-row w-full shadow-2xl shadow-black/5 relative overflow-hidden bg-white/40 border border-black/10 rounded-sm backdrop-blur-sm">
+                            
+                            <!-- Step 1: URL Entry -->
+                            <div id="audit-step-1" class="flex flex-col sm:flex-row w-full transition-all duration-300">
+                                <input type="text" id="hero-store-url" name="store_url" placeholder="Your existing store URL" required data-fs-field
+                                    class="flex-grow bg-transparent px-6 py-4 text-sm focus:outline-none focus:bg-white/20 transition-all placeholder:text-gray-400 border-b sm:border-b-0 sm:border-r border-black/10">
+                                <button type="button" id="btn-next-step"
+                                    class="matrix-btn bg-[#1a6330] text-white px-8 py-4 font-bold text-sm hover:bg-[#124a23] transition-all flex items-center justify-center space-x-2 shrink-0 sm:w-auto">
+                                    <span>Get Free Audit</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+
+                            <!-- Step 2: Contact Entry (hidden initially) -->
+                            <div id="audit-step-2" class="flex flex-col sm:flex-row w-full transition-all duration-300 hidden opacity-0 translate-x-4">
+                                <input type="text" id="hero-contact" name="email_or_whatsapp" placeholder="Email or WhatsApp" required data-fs-field
+                                    class="flex-grow bg-transparent px-6 py-4 text-sm focus:outline-none focus:bg-white/20 transition-all placeholder:text-gray-400 border-b sm:border-b-0 sm:border-r border-black/10">
+                                <button type="submit" data-fs-submit-btn
+                                    class="matrix-btn bg-[#1a6330] text-white px-8 py-4 font-bold text-sm hover:bg-[#124a23] transition-all flex items-center justify-center space-x-2 shrink-0 sm:w-auto">
+                                    <span>Submit Request</span>
+                                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+
+                            <!-- Success Message Overlay -->
+                            <div id="hero-success-custom" class="absolute inset-0 bg-[#f4f2dd] z-[30] flex items-center justify-center space-x-3 text-labAccent font-bold text-xs tracking-widest opacity-0 pointer-events-none transition-all duration-500 border border-labAccent/20">
+                                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                <span>AUDIT REQUEST DISPATCHED</span>
+                            </div>
+                        </form>
+                        
+                        <!-- Back Navigation Button -->
+                        <button type="button" id="btn-back-step" class="hidden opacity-0 transition-all duration-300 mt-2 text-[10px] text-[#3A5638]/60 hover:text-labAccent flex items-center space-x-1 uppercase tracking-wider font-bold">
+                            <i data-lucide="arrow-left" class="w-3 h-3"></i>
+                            <span>Change URL</span>
+                        </button>
+                    </div>
 
                     <!-- Footer Info -->
                     <div
@@ -439,7 +476,7 @@
                                 <!-- Oval Frame -->
                                 <div class="absolute inset-0 border-[8px] border-[#ede8c6] rounded-full z-20"></div>
                                 <div class="absolute inset-2 border border-black/20 rounded-full z-20"></div>
-                                <img src="washington.webp" alt="George Washington"
+                                <img src="washington.webp" alt="George Washington" fetchpriority="high"
                                     class="w-full h-full object-cover rounded-full grayscale mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700">
                                 <!-- Green Tint Overlay -->
                                 <div
@@ -1710,6 +1747,90 @@
             if (mobileBtn) mobileBtn.addEventListener('click', () => mobileMenu.classList.remove('translate-x-full'));
             if (mobileClose) mobileClose.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
 
+            // Multi-step Hero Form Logic
+            const btnNextStep = document.getElementById('btn-next-step');
+            const btnBackStep = document.getElementById('btn-back-step');
+            const auditStep1 = document.getElementById('audit-step-1');
+            const auditStep2 = document.getElementById('audit-step-2');
+            const inputStoreUrl = document.getElementById('hero-store-url');
+            const inputContact = document.getElementById('hero-contact');
+
+            if (btnNextStep && btnBackStep && auditStep1 && auditStep2 && inputStoreUrl && inputContact) {
+                // If user presses Enter in Step 1 input, click Next instead of submitting
+                inputStoreUrl.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        btnNextStep.click();
+                    }
+                });
+
+                btnNextStep.addEventListener('click', () => {
+                    // Validate URL input
+                    if (!inputStoreUrl.value.trim()) {
+                        inputStoreUrl.reportValidity();
+                        return;
+                    }
+
+                    // Transition out Step 1
+                    auditStep1.classList.add('opacity-0', '-translate-x-4');
+                    setTimeout(() => {
+                        auditStep1.classList.add('hidden');
+                        
+                        // Transition in Step 2
+                        auditStep2.classList.remove('hidden');
+                        setTimeout(() => {
+                            auditStep2.classList.remove('opacity-0', 'translate-x-4');
+                            
+                            // Show back button
+                            btnBackStep.classList.remove('hidden');
+                            setTimeout(() => {
+                                btnBackStep.classList.remove('opacity-0');
+                            }, 50);
+                            
+                            inputContact.focus();
+
+                            // Tooltip transition in
+                            const tooltip = document.getElementById('audit-tooltip');
+                            if (tooltip) {
+                                tooltip.classList.remove('opacity-0', 'translate-y-2', 'pointer-events-none');
+                                tooltip.classList.add('opacity-100', 'translate-y-0');
+                                
+                                // Auto-fade out after 3.5 seconds
+                                setTimeout(() => {
+                                    tooltip.classList.remove('opacity-100', 'translate-y-0');
+                                    tooltip.classList.add('opacity-0', '-translate-y-1', 'pointer-events-none');
+                                }, 3500);
+                            }
+                        }, 50);
+                    }, 300);
+                });
+
+                btnBackStep.addEventListener('click', () => {
+                    // Transition out Step 2 & Back button
+                    auditStep2.classList.add('opacity-0', 'translate-x-4');
+                    btnBackStep.classList.add('opacity-0');
+                    
+                    setTimeout(() => {
+                        auditStep2.classList.add('hidden');
+                        btnBackStep.classList.add('hidden');
+                        
+                        // Reset tooltip classes
+                        const tooltip = document.getElementById('audit-tooltip');
+                        if (tooltip) {
+                            tooltip.classList.remove('opacity-100', 'translate-y-0', 'opacity-0', '-translate-y-1');
+                            tooltip.classList.add('opacity-0', 'translate-y-2', 'pointer-events-none');
+                        }
+
+                        // Transition in Step 1
+                        auditStep1.classList.remove('hidden');
+                        setTimeout(() => {
+                            auditStep1.classList.remove('opacity-0', '-translate-x-4');
+                            inputStoreUrl.focus();
+                        }, 50);
+                    }, 300);
+                });
+            }
+
             // Initialize Lucide icons
             lucide.createIcons();
         });
@@ -1724,6 +1845,14 @@
                 if (successMsg) {
                     successMsg.classList.remove('opacity-0', 'pointer-events-none');
                     successMsg.classList.add('opacity-100');
+                }
+                const btnBackStep = document.getElementById('btn-back-step');
+                if (btnBackStep) {
+                    btnBackStep.classList.add('hidden', 'opacity-0');
+                }
+                const tooltip = document.getElementById('audit-tooltip');
+                if (tooltip) {
+                    tooltip.classList.add('hidden', 'opacity-0');
                 }
             }
         });

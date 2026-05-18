@@ -47,19 +47,22 @@
     }
     </script>
 
-    <!-- Fonts -->
+    <link rel="preload" as="script" href="https://cdn.tailwindcss.com">
+
+    <!-- Fonts - Asynchronous Non-Blocking Loading Pattern -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap">
+    </noscript>
 
     <!-- CSS / Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/style.min.css">
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <script>
         tailwind.config = {
@@ -115,12 +118,12 @@
         }
 
         @keyframes heroFadeUp {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .hero-fade-up {
             opacity: 0;
-            animation: heroFadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: heroFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         /* Accordion Customization */
@@ -227,11 +230,11 @@
                     <span class="w-2 h-2 bg-labAccent rounded-full animate-pulse"></span>
                     <span>[ PERFORMANCE_LAB: VERIFIED_DATA ]</span>
                 </div>
-                <h1 class="hero-fade-up font-playfair font-bold text-4xl md:text-[50px] text-labBlue leading-tight mb-8" style="animation-delay: 0.2s">
+                <h1 class="hero-fade-up font-playfair font-bold text-4xl md:text-[50px] text-labBlue leading-tight mb-8" style="animation-delay: 0.05s">
                     Verified <br>
                     <span class="italic text-labAccent">Technical Metrics.</span>
                 </h1>
-                <p class="hero-fade-up font-space text-[14px] text-[#3A5638] max-w-2xl leading-relaxed" style="animation-delay: 0.4s">
+                <p class="hero-fade-up font-space text-[14px] text-[#3A5638] max-w-2xl leading-relaxed" style="animation-delay: 0.1s">
                     We don't deal in promises—we deal in logs. Explore the technical performance of our architectures across payment stability, SEO dominance, and high-velocity scaling protocols.
                 </p>
             </div>
