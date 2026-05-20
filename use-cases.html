@@ -267,8 +267,71 @@
     <section class="py-24 bg-labLight">
         <div class="container mx-auto px-6 md:px-12 relative">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Case 03 -->
+                <div onclick="openCaseModal('case-03')" onmouseenter="openCaseModal('case-03')" onmouseleave="closeCaseModal('case-03')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative">
+                    <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
+                        <img src="use cases/use case 03.webp" alt="Peptide High-Risk Payment Gateway" class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <div class="flex items-center space-x-1 mb-3">
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-base text-labBlue mb-2 leading-tight">Non-US Resident Peptide Payment Gateway</h3>
+                        <p class="text-[12px] text-[#3A5638]/70 leading-relaxed">
+                            Secured and integrated stable, high-risk payment gateway architecture for international peptide merchants operating without US residency or SSN.
+                        </p>
+                        <!-- Mobile Only Hint -->
+                        <div class="md:hidden flex items-center space-x-2 mt-4 text-labAccent font-bold text-[10px] tracking-widest uppercase">
+                            <span>View Case</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+
+                    <!-- Speech Bubble Tooltip -->
+                    <div id="case-03-bubble" class="fixed md:absolute inset-x-6 md:inset-x-auto md:left-full top-1/2 -translate-y-1/2 md:ml-2.5 w-auto md:w-80 text-white rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,1)] opacity-0 pointer-events-none md:translate-x-4 transition-all duration-300 border border-white/10" style="background: #000000 !important; opacity: 0; z-index: 999 !important;">
+                        <button onclick="event.stopPropagation(); closeCaseModal('case-03')" class="md:hidden absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/10 rounded-full text-white/70">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                        <div class="p-6">
+                            <div class="w-full h-36 bg-[#050505] rounded-xl overflow-hidden mb-5 relative border border-white/10">
+                                <div class="absolute inset-0 transition-opacity duration-1000" id="case-03-slide-1">
+                                    <img src="use cases/use case 03.webp" alt="Peptide High-Risk Payment Gateway" class="w-full h-full object-cover opacity-90">
+                                    <div class="absolute top-3 left-3 bg-black/40 backdrop-blur-md text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">GATEWAY</div>
+                                </div>
+                                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="case-03-slide-2">
+                                    <img src="use cases/use case 03 03.webp" alt="Secure International Payment Pipeline" class="w-full h-full object-cover opacity-90 scale-105 origin-center">
+                                    <div class="absolute top-3 left-3 bg-labAccent text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">SECURE</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-[10px] font-bold text-labAccent tracking-[0.2em] uppercase">Protocol_Archive_03</h4>
+                                <div class="flex space-x-1">
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                </div>
+                            </div>
+                            <p class="text-[13px] font-medium leading-relaxed mb-5 text-white/90">Successfully established a fully compliant, robust peptide merchant processing network for an offshore brand without US residency or SSN requirements.</p>
+                            <div class="bg-white/5 rounded-lg p-4 border border-white/5">
+                                <p class="text-[11px] italic text-white/60 leading-relaxed">"As a non-US founder, getting a stable peptide payment gateway without an SSN seemed impossible. Molecular Matrix set up a bulletproof international gateway within days."</p>
+                                <div class="mt-3 flex items-center space-x-2">
+                                    <div class="w-4 h-4 bg-labAccent rounded-full flex items-center justify-center"><i data-lucide="check" class="w-2 h-2 text-white"></i></div>
+                                    <span class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Intl_Merchant</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute right-full top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-black" style="border-right-color: #000000 !important;"></div>
+                    </div>
+                </div>
+
                 <!-- Case 02 -->
-                <div onclick="openCaseModal('case-02')" onmouseenter="openCaseModal('case-02')" onmouseleave="closeCaseModal('case-02')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative">
+                <div onclick="openCaseModal('case-02')" onmouseenter="openCaseModal('case-02')" onmouseleave="closeCaseModal('case-02')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative" style="transition-delay: 0.1s">
                     <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
                         <img src="use cases/usse case 02.webp" alt="Native Gateway & Web" class="w-full h-full object-contain">
                     </div>
@@ -331,7 +394,7 @@
                 </div>
 
                 <!-- Case 01 -->
-                <div onclick="openCaseModal('case-01')" onmouseenter="openCaseModal('case-01')" onmouseleave="closeCaseModal('case-01')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative" style="transition-delay: 0.1s">
+                <div onclick="openCaseModal('case-01')" onmouseenter="openCaseModal('case-01')" onmouseleave="closeCaseModal('case-01')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative" style="transition-delay: 0.2s">
                     <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center">
                         <img src="use cases/case 01.webp" alt="Web Redesign & Gateway" class="w-full h-full object-contain">
                     </div>
@@ -392,35 +455,6 @@
                         </div>
                         <!-- Triangle Tail (Hidden on Mobile) -->
                         <div class="hidden md:block absolute right-full top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-black" style="border-right-color: #000000 !important;"></div>
-                    </div>
-                </div>
-
-                <!-- Case 03 (Coming Soon) -->
-                <div class="blur-reveal border border-black/5 flex flex-col transition-all duration-300 relative overflow-hidden group" style="transition-delay: 0.2s">
-                    <!-- Coming Soon Overlay -->
-                    <div class="absolute inset-0 flex items-center justify-center z-20">
-                        <div class="bg-labBlue/90 backdrop-blur-md text-labAccent text-[10px] font-space font-bold tracking-[0.4em] px-6 py-3 border border-labAccent/30 rounded-sm uppercase shadow-2xl transform group-hover:scale-110 transition-transform duration-500">
-                            Coming Soon
-                        </div>
-                    </div>
-                    
-                    <div class="blur-[4px] opacity-50 flex flex-col h-full">
-                        <div class="w-full bg-labBlue/5 flex items-center justify-center h-48">
-                            <i data-lucide="zap" class="w-12 h-12 text-labBlue/10"></i>
-                        </div>
-                        <div class="p-5 flex-grow">
-                            <div class="flex items-center space-x-1 mb-3">
-                                <i data-lucide="star" class="w-3 h-3 fill-labAccent/30 text-labAccent/30"></i>
-                                <i data-lucide="star" class="w-3 h-3 fill-labAccent/30 text-labAccent/30"></i>
-                                <i data-lucide="star" class="w-3 h-3 fill-labAccent/30 text-labAccent/30"></i>
-                                <i data-lucide="star" class="w-3 h-3 fill-labAccent/30 text-labAccent/30"></i>
-                                <i data-lucide="star" class="w-3 h-3 fill-labAccent/30 text-labAccent/30"></i>
-                            </div>
-                            <h3 class="font-playfair font-bold text-base text-labBlue mb-2 leading-tight">High-Velocity Scaling Protocol</h3>
-                            <p class="text-[12px] text-[#3A5638]/70 leading-relaxed">
-                                Infrastructure optimization for a peptide research startup, handling 10x traffic growth in 90 days.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -639,6 +673,22 @@
                 img2: 'Copy of Lip.webp',
                 feedback: 'The transformation is incredible. We finally have a platform that matches the quality of our research. The payment integration is flawless and secure.',
                 features: ['Secure Gateway', 'Authority UI', 'Mobile First', 'Load Optimization']
+            },
+            'case-02': {
+                title: 'End-to-End Web & Gateway Architecture',
+                description: 'Complete ground-up development of a high-performance web platform integrated with custom payment gateway protocols.',
+                img1: 'use cases/usse case 02.webp',
+                img2: 'use cases/usecase 02 02.webp',
+                feedback: 'The ground-up build was exactly what we needed. Seamless integration and total control over the UX.',
+                features: ['Custom Web Ecosystem', 'High-Risk Gateway', 'UX/UI Engineering']
+            },
+            'case-03': {
+                title: 'Non-US Resident Peptide Payment Gateway',
+                description: 'Secured and integrated stable, high-risk payment gateway architecture for international peptide merchants operating without US residency or SSN.',
+                img1: 'use cases/use case 03.webp',
+                img2: 'use cases/use case 03.webp',
+                feedback: 'As a non-US founder, getting a stable peptide payment gateway without an SSN seemed impossible. Molecular Matrix set up a bulletproof international gateway within days.',
+                features: ['Non-US Provisioning', 'No SSN Required', 'Peptide Processing Channels', 'Compliance Infrastructure']
             }
         };
 
