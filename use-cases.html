@@ -304,14 +304,14 @@
             <a href="mailto:support@molecularmatrix.online" class="text-base font-medium text-labBlue underline decoration-labAccent/30 mb-8 block font-space">support@molecularmatrix.online</a>
             
             <div class="flex space-x-5">
-                <a href="#" class="w-10 h-10 rounded-full bg-labBlue/5 flex items-center justify-center text-labBlue hover:bg-labAccent hover:text-white transition-all">
-                    <i data-lucide="facebook" class="w-5 h-5"></i>
-                </a>
-                <a href="#" class="w-10 h-10 rounded-full bg-labBlue/5 flex items-center justify-center text-labBlue hover:bg-labAccent hover:text-white transition-all">
-                    <i data-lucide="instagram" class="w-5 h-5"></i>
-                </a>
                 <a href="https://wa.me/447846031239" target="_blank" class="w-10 h-10 rounded-full bg-labAccent/10 flex items-center justify-center text-labAccent hover:bg-labAccent hover:text-white transition-all">
                     <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </a>
+                <a href="https://www.instagram.com/molecularmatrix.us/" target="_blank" class="w-10 h-10 rounded-full bg-labBlue/5 flex items-center justify-center text-labBlue hover:bg-labAccent hover:text-white transition-all">
+                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61590304775581" target="_blank" class="w-10 h-10 rounded-full bg-labBlue/5 flex items-center justify-center text-labBlue hover:bg-labAccent hover:text-white transition-all">
+                    <i data-lucide="facebook" class="w-5 h-5"></i>
                 </a>
             </div>
         </div>
@@ -339,8 +339,134 @@
     <section class="py-24 bg-labLight">
         <div class="container mx-auto px-6 md:px-12 relative">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Case 07 -->
+                <div onclick="openCaseModal('case-07')" onmouseenter="openCaseModal('case-07')" onmouseleave="closeCaseModal('case-07')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative">
+                    <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
+                        <img src="use cases/use case 07.webp" alt="Organic SEO Domination" class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <div class="flex items-center space-x-1 mb-3">
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-base text-labBlue mb-2 leading-tight">1-Month Organic SEO & Search Engine Domination</h3>
+                        <p class="text-[12px] text-[#3A5638]/70 leading-relaxed">
+                            Engineered an organic SEO protocol that secured page-one rankings within 30 days. Unlike paid ads that stop delivering traffic the moment spend halts, our organic architecture builds compounding authority for permanent visibility.
+                        </p>
+                        <!-- Mobile Only Hint -->
+                        <div class="md:hidden flex items-center space-x-2 mt-4 text-labAccent font-bold text-[10px] tracking-widest uppercase">
+                            <span>View Case</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+
+                    <!-- Speech Bubble Tooltip -->
+                    <div id="case-07-bubble" class="fixed md:absolute inset-x-6 md:inset-x-auto md:left-full top-1/2 -translate-y-1/2 md:ml-2.5 w-auto md:w-80 text-white rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,1)] opacity-0 pointer-events-none md:translate-x-4 transition-all duration-300 border border-white/10" style="background: #000000 !important; opacity: 0; z-index: 999 !important;">
+                        <button onclick="event.stopPropagation(); closeCaseModal('case-07')" class="md:hidden absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/10 rounded-full text-white/70">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                        <div class="p-6">
+                            <div class="w-full h-36 bg-[#050505] rounded-xl overflow-hidden mb-5 relative border border-white/10">
+                                <div class="absolute inset-0 transition-opacity duration-1000" id="case-07-slide-1">
+                                    <img src="use cases/use case 07.webp" alt="SEO Report" class="w-full h-full object-cover opacity-90">
+                                    <div class="absolute top-3 left-3 bg-black/40 backdrop-blur-md text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">REPORT</div>
+                                </div>
+                                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="case-07-slide-2">
+                                    <img src="use cases/use case 07 07.webp" alt="Organic Traffic Optimization" class="w-full h-full object-cover opacity-90 scale-105 origin-center">
+                                    <div class="absolute top-3 left-3 bg-labAccent text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">ORGANIC</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-[10px] font-bold text-labAccent tracking-[0.2em] uppercase">Protocol_Archive_07</h4>
+                                <div class="flex space-x-1">
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                </div>
+                            </div>
+                            <p class="text-[13px] font-medium leading-relaxed mb-5 text-white/90">Optimized keyword maps and backlink structure to bypass search barriers, scaling organic traffic exponentially within a 30-day timeline.</p>
+                            <div class="bg-white/5 rounded-lg p-4 border border-white/5">
+                                <p class="text-[11px] italic text-white/60 leading-relaxed">"Our paid ads kept getting disabled, stopping our sales. Molecular Matrix's SEO protocol ranked us on page one in 30 days. The organic traffic is compounding and never stops."</p>
+                                <div class="mt-3 flex items-center space-x-2">
+                                    <div class="w-4 h-4 bg-labAccent rounded-full flex items-center justify-center"><i data-lucide="check" class="w-2 h-2 text-white"></i></div>
+                                    <span class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Compounding_Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute right-full top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-black" style="border-right-color: #000000 !important;"></div>
+                    </div>
+                </div>
+
+                <!-- Case 06 -->
+                <div onclick="openCaseModal('case-06')" onmouseenter="openCaseModal('case-06')" onmouseleave="closeCaseModal('case-06')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative" style="transition-delay: 0.1s">
+                    <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
+                        <img src="use cases/use case 06 06.webp" alt="High-Risk Merchant Gateway" class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <div class="flex items-center space-x-1 mb-3">
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-base text-labBlue mb-2 leading-tight">High-Risk Merchant Gateway & Credit Card Processor</h3>
+                        <p class="text-[12px] text-[#3A5638]/70 leading-relaxed">
+                            Engineered and deployed a custom high-risk payment gateway with an integrated credit card processor, tailored specifically for high-volume peptide e-commerce to ensure stable, ban-free transaction flows.
+                        </p>
+                        <!-- Mobile Only Hint -->
+                        <div class="md:hidden flex items-center space-x-2 mt-4 text-labAccent font-bold text-[10px] tracking-widest uppercase">
+                            <span>View Case</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+
+                    <!-- Speech Bubble Tooltip -->
+                    <div id="case-06-bubble" class="fixed md:absolute inset-x-6 md:inset-x-auto md:right-full top-1/2 -translate-y-1/2 md:mr-2.5 w-auto md:w-80 text-white rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,1)] opacity-0 pointer-events-none md:-translate-x-4 transition-all duration-300 border border-white/10" style="background: #000000 !important; opacity: 0; z-index: 999 !important;">
+                        <button onclick="event.stopPropagation(); closeCaseModal('case-06')" class="md:hidden absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/10 rounded-full text-white/70">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                        <div class="p-6">
+                            <div class="w-full h-36 bg-[#050505] rounded-xl overflow-hidden mb-5 relative border border-white/10">
+                                <div class="absolute inset-0 transition-opacity duration-1000" id="case-06-slide-1">
+                                    <img src="use cases/use case 06 06.webp" alt="Merchant Gateway" class="w-full h-full object-cover opacity-90">
+                                    <div class="absolute top-3 left-3 bg-black/40 backdrop-blur-md text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">GATEWAY</div>
+                                </div>
+                                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="case-06-slide-2">
+                                    <img src="use cases/use case 06.webp" alt="Credit Card Processor" class="w-full h-full object-cover opacity-90 scale-105 origin-center">
+                                    <div class="absolute top-3 left-3 bg-labAccent text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">ACTIVE</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-[10px] font-bold text-labAccent tracking-[0.2em] uppercase">Protocol_Archive_06</h4>
+                                <div class="flex space-x-1">
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                </div>
+                            </div>
+                            <p class="text-[13px] font-medium leading-relaxed mb-5 text-white/90">Successfully integrated a resilient credit card processor and high-risk gateway, safeguarding high-volume peptide sales from merchant account terminations.</p>
+                            <div class="bg-white/5 rounded-lg p-4 border border-white/5">
+                                <p class="text-[11px] italic text-white/60 leading-relaxed">"Molecular Matrix built us a bulletproof merchant gateway. Our credit card processing for peptides has been running flawlessly without any bans."</p>
+                                <div class="mt-3 flex items-center space-x-2">
+                                    <div class="w-4 h-4 bg-labAccent rounded-full flex items-center justify-center"><i data-lucide="check" class="w-2 h-2 text-white"></i></div>
+                                    <span class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Processor_Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute left-full top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[10px] border-l-black" style="border-left-color: #000000 !important;"></div>
+                    </div>
+                </div>
+
                 <!-- Case 05 -->
-                <div onclick="openCaseModal('case-05')" onmouseenter="openCaseModal('case-05')" onmouseleave="closeCaseModal('case-05')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative">
+                <div onclick="openCaseModal('case-05')" onmouseenter="openCaseModal('case-05')" onmouseleave="closeCaseModal('case-05')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative" style="transition-delay: 0.2s">
                     <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
                         <img src="use cases/usecase 05.webp" alt="FDA Compliant Payment Gateway" class="w-full h-full object-contain">
                     </div>
@@ -403,7 +529,7 @@
                 </div>
 
                 <!-- Case 04 -->
-                <div onclick="openCaseModal('case-04')" onmouseenter="openCaseModal('case-04')" onmouseleave="closeCaseModal('case-04')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative">
+                <div onclick="openCaseModal('case-04')" onmouseenter="openCaseModal('case-04')" onmouseleave="closeCaseModal('case-04')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative" style="transition-delay: 0.3s">
                     <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
                         <img src="use cases/usecase 04.webp" alt="Shopify High-Risk Card Processing Gateway" class="w-full h-full object-contain">
                     </div>
@@ -466,7 +592,7 @@
                 </div>
 
                 <!-- Case 03 -->
-                <div onclick="openCaseModal('case-03')" onmouseenter="openCaseModal('case-03')" onmouseleave="closeCaseModal('case-03')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative" style="transition-delay: 0.1s">
+                <div onclick="openCaseModal('case-03')" onmouseenter="openCaseModal('case-03')" onmouseleave="closeCaseModal('case-03')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative" style="transition-delay: 0.4s">
                     <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
                         <img src="use cases/use case 03.webp" alt="Peptide High-Risk Payment Gateway" class="w-full h-full object-contain">
                     </div>
@@ -529,7 +655,7 @@
                 </div>
 
                 <!-- Case 02 -->
-                <div onclick="openCaseModal('case-02')" onmouseenter="openCaseModal('case-02')" onmouseleave="closeCaseModal('case-02')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative" style="transition-delay: 0.2s">
+                <div onclick="openCaseModal('case-02')" onmouseenter="openCaseModal('case-02')" onmouseleave="closeCaseModal('case-02')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative" style="transition-delay: 0.5s">
                     <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
                         <img src="use cases/usse case 02.webp" alt="Native Gateway & Web" class="w-full h-full object-contain">
                     </div>
@@ -592,7 +718,7 @@
                 </div>
 
                 <!-- Case 01 -->
-                <div onclick="openCaseModal('case-01')" onmouseenter="openCaseModal('case-01')" onmouseleave="closeCaseModal('case-01')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative" style="transition-delay: 0.3s">
+                <div onclick="openCaseModal('case-01')" onmouseenter="openCaseModal('case-01')" onmouseleave="closeCaseModal('case-01')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative" style="transition-delay: 0.6s">
                     <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center">
                         <img src="use cases/case 01.webp" alt="Web Redesign & Gateway" class="w-full h-full object-contain">
                     </div>
@@ -651,7 +777,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Triangle Tail (Hidden on Mobile) -->
                         <div class="hidden md:block absolute right-full top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-black" style="border-right-color: #000000 !important;"></div>
                     </div>
                 </div>
@@ -835,6 +960,22 @@
 
         // Case Study Data
         const caseData = {
+            'case-07': {
+                title: '1-Month Organic SEO & Search Engine Domination',
+                description: 'Engineered an organic SEO protocol that secured page-one rankings within 30 days. Unlike paid ads that stop delivering traffic the moment spend halts, our organic architecture builds compounding authority for permanent visibility.',
+                img1: 'use cases/use case 07.webp',
+                img2: 'use cases/use case 07 07.webp',
+                feedback: 'Our paid ads kept getting disabled, stopping our sales. Molecular Matrix\'s SEO protocol ranked us on page one in 30 days. The organic traffic is compounding and never stops.',
+                features: ['Search Domination', 'Organic SEO Pipeline', 'Compounding Authority', '30-Day Velocity']
+            },
+            'case-06': {
+                title: 'High-Risk Merchant Gateway & Credit Card Processor',
+                description: 'Engineered and deployed a custom high-risk payment gateway with an integrated credit card processor, tailored specifically for high-volume peptide e-commerce to ensure stable, ban-free transaction flows.',
+                img1: 'use cases/use case 06 06.webp',
+                img2: 'use cases/use case 06.webp',
+                feedback: 'Molecular Matrix built us a bulletproof merchant gateway. Our credit card processing for peptides has been running flawlessly without any bans.',
+                features: ['Custom Merchant Gateway', 'Credit Card Processor', 'High-Risk Compliance', 'Fraud Shield Integration']
+            },
             'case-05': {
                 title: 'Laravel High-Risk Card Processing & FDA Compliance',
                 description: 'Developed a custom Laravel web application integrating a robust high-risk merchant credit card processor, meticulously structured to maintain FDA compliance without getting flagged.',
@@ -920,7 +1061,7 @@
                 
                 // Slide direction depends on positioning (Desktop only)
                 if (window.innerWidth >= 768) {
-                    const leftBubbles = ['case-04', 'case-02'];
+                    const leftBubbles = ['case-06', 'case-04', 'case-02'];
                     const xOffset = leftBubbles.includes(caseId) ? '-16px' : '16px';
                     bubble.style.transform = `translateX(${xOffset}) translateY(-50%)`;
                 } else {
