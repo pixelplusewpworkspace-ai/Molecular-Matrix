@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Plans | Molecular Matrix</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        labBlue: '#142114',
+                        labAccent: '#1a6330',
+                        labLight: '#ede8c6',
+                    },
+                    fontFamily: {
+                        playfair: ['Playfair Display', 'serif'],
+                        space: ['Space Grotesk', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .blur-reveal {
+            filter: blur(12px);
+            opacity: 0.2;
+            transition: filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease-out;
+            will-change: filter, opacity;
+        }
+        .blur-reveal.revealed {
+            filter: blur(0);
+            opacity: 1;
+        }
+
+        /* Sticky Nav */
+        #main-nav.nav-scrolled {
+            background: rgba(237, 232, 198, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(58, 86, 56, 0.08);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.04);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: #1a6330;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Hero Fade Up */
+        @keyframes heroFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-fade-up {
+            opacity: 0;
+            animation: heroFadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Ticker Animation */
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-ticker {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+        }
+
+        /* Chat Tooltip Animation */
+        @keyframes pulseTooltip {
+            0%, 100% { opacity: 0; transform: translateY(10px); }
+            50% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-tooltip {
+            animation: pulseTooltip 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-labLight text-labBlue font-space overflow-x-hidden text-sm">
+
+    <!-- Top Pipeline Bar -->
+    <div class="fixed top-0 left-0 w-full z-[60] bg-[#0c140e] text-[9px] text-white/50 py-1.5 overflow-hidden font-space uppercase tracking-widest border-b border-white/5">
+        <div class="animate-ticker">
+            <div class="flex items-center space-x-12 px-6">
+                <div class="flex items-center space-x-2"><span class="bg-green-500 w-1.5 h-1.5 rounded-full animate-pulse"></span><span class="text-white font-bold">LIVE</span> <span class="text-green-400">PIPELINE</span></div>
+                <div>Outpost HQ <span class="text-white">Success Case Mapped</span></div>
+                <div>Harbor Health <span class="text-white">Conversion Optimization +14%</span></div>
+                <div>TravelArrow <span class="text-white">Scale Protocol Active</span></div>
+                <div>FIELDSTACK <span class="text-white">Gateway Recovery Complete</span></div>
+                <div class="flex items-center space-x-2"><span class="bg-green-500 w-1.5 h-1.5 rounded-full animate-pulse"></span><span class="text-white font-bold">LIVE</span> <span class="text-green-400">PIPELINE</span></div>
+                <div>Outpost HQ <span class="text-white">Success Case Mapped</span></div>
+                <div>Harbor Health <span class="text-white">Conversion Optimization +14%</span></div>
+                <div>TravelArrow <span class="text-white">Scale Protocol Active</span></div>
+                <div>FIELDSTACK <span class="text-white">Gateway Recovery Complete</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-[28px] left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-4 transition-all duration-500 bg-labLight border-b border-[#3A5638]/5">
+        <a href="/" class="flex items-center space-x-2">
+            <span class="font-playfair font-bold text-xl text-labBlue">Molecular <span class="italic text-labAccent">Matrix</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-[13px] font-medium text-labBlue/80">
+            <a href="index.html#mirror" class="nav-link hover:text-labAccent transition-colors relative">Pain Points</a>
+            <a href="index.html#services" class="nav-link hover:text-labAccent transition-colors relative">Services</a>
+            <a href="performance.html" class="nav-link hover:text-labAccent transition-colors relative">Proven Results</a>
+            <a href="index.html#authority" class="nav-link hover:text-labAccent transition-colors relative">Why Us</a>
+            <a href="support-plans.html" class="matrix-btn bg-[#3A5638] text-[#f4f2dd] border border-[#3A5638] px-6 py-2 rounded-sm hover:text-white transition-all text-xs font-bold tracking-wider uppercase">Support Plans</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-btn" class="p-2"><i data-lucide="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-labLight z-[100] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-8 md:hidden">
+        <!-- Menu Header -->
+        <div class="flex items-center justify-between mb-16">
+            <a href="/" class="flex items-center space-x-2">
+                <span class="font-playfair font-bold text-2xl text-labBlue">Molecular <span class="italic text-labAccent">Matrix</span></span>
+            </a>
+            <button id="mobile-menu-close" class="p-2 bg-labBlue/5 rounded-full"><i data-lucide="x" class="w-6 h-6"></i></button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="flex flex-col space-y-6 mb-auto">
+            <a href="index.html#mirror" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Pain Points</a>
+            <a href="index.html#solution" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Solution</a>
+            <a href="index.html#services" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Services</a>
+            <a href="performance.html" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Proven Results</a>
+            <a href="use-cases.html" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Use Cases</a>
+            <a href="support-plans.html" class="text-lg font-bold text-labAccent border-b-2 border-labAccent/20 pb-2 inline-block tracking-[0.2em] uppercase">Support Plans</a>
+        </div>
+
+        <!-- Menu Footer -->
+        <div class="pt-8 border-t border-labBlue/10">
+            <p class="text-[10px] font-bold text-labBlue/40 uppercase tracking-[0.3em] mb-4">Contact Protocol</p>
+            <a href="mailto:support@molecularmatrix.online" class="text-base font-medium text-labBlue underline decoration-labAccent/30 mb-8 block font-space">support@molecularmatrix.online</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-44 pb-20 bg-labLight border-b border-labBlue/5">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="hero-fade-up inline-flex items-center space-x-3 text-labAccent font-space text-[10px] tracking-[0.4em] font-bold uppercase mb-8 border border-labAccent/20 px-5 py-2 rounded-full">
+                    <span class="w-1.5 h-1.5 bg-labAccent rounded-full animate-pulse"></span>
+                    <span>SUPPORT PLANS</span>
+                </div>
+                <h1 class="hero-fade-up font-playfair font-bold text-4xl md:text-[56px] text-labBlue leading-[1.1] mb-8" style="animation-delay: 0.2s">
+                    Website Support Plans That <br> Keep Your Business Running
+                </h1>
+                <p class="hero-fade-up font-space text-[15px] md:text-[17px] text-[#3A5638]/90 max-w-2xl mx-auto leading-relaxed" style="animation-delay: 0.4s">
+                    We handle your updates, security, backups, and payment fixes so your site never goes down. Choose a plan and get ongoing developer support.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                
+                <!-- Plan 1: Basic -->
+                <div class="bg-white rounded-2xl p-8 border border-labBlue/10 hover:border-labAccent/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full relative group">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Basic Support</h3>
+                        <p class="text-labBlue/60 text-sm h-12">Best for simple sites that need essential upkeep and safety.</p>
+                        <div class="mt-6 flex items-baseline">
+                            <span class="text-4xl font-bold font-playfair">$100</span>
+                            <span class="text-labBlue/60 ml-2">/ month</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 flex-grow text-sm">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>2 Cloud Backups per month (Every 2 weeks)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Weekly plugin updates and bug fixes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Monthly security check</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Small weekly edits and text tweaks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Standard email support</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#contact" class="w-full block text-center py-3 px-6 rounded border-2 border-labBlue text-labBlue font-bold tracking-wider hover:bg-labBlue hover:text-white transition-colors uppercase text-xs">
+                        Get Basic Support
+                    </a>
+                </div>
+
+                <!-- Plan 2: Standard (Popular) -->
+                <div class="bg-labBlue text-white rounded-2xl p-8 border-2 border-labAccent shadow-2xl flex flex-col h-full relative transform md:-translate-y-4">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-labAccent text-white text-[10px] font-bold px-4 py-1.5 rounded-full tracking-widest uppercase">
+                        Most Popular
+                    </div>
+                    <div class="mb-8 mt-2">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Standard Support</h3>
+                        <p class="text-white/60 text-sm h-12">Best for growing online stores that need priority help and zero payment errors.</p>
+                        <div class="mt-6 flex items-baseline">
+                            <span class="text-4xl font-bold font-playfair text-labLight">$200</span>
+                            <span class="text-white/60 ml-2">/ month</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-white/90">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>1 Cloud Backup every week</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Plugin updates and checks every 3 days</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Weekly security scan and malware check</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Fast payment gateway support (Reply within 24–36 hours)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Regular website edits, tweaks, and custom design changes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Priority support queue</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#contact" class="w-full block text-center py-3 px-6 rounded bg-labAccent text-white font-bold tracking-wider hover:bg-white hover:text-labBlue transition-colors uppercase text-xs">
+                        Get Standard Support
+                    </a>
+                </div>
+
+                <!-- Plan 3: Premium -->
+                <div class="bg-white rounded-2xl p-8 border border-labBlue/10 hover:border-labAccent/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
+                    <div class="absolute top-4 right-4 bg-[#f4f1ea] text-labBlue text-[9px] font-bold px-3 py-1 rounded border border-labBlue/10 tracking-widest uppercase">
+                        Full Dedicated
+                    </div>
+                    <div class="mb-8 mt-2">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Premium Support</h3>
+                        <p class="text-labBlue/60 text-sm h-12">Best for busy brands that want their own dedicated full-time developer on call.</p>
+                        <div class="mt-6 flex items-baseline">
+                            <span class="text-4xl font-bold font-playfair">$350</span>
+                            <span class="text-labBlue/60 ml-2">/ month</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 flex-grow text-sm">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Dedicated Developer on demand (Like an in-house dev)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Daily cloud backups and daily security checks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Emergency payment fixes (Guaranteed response within 2 hours)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Instant task handling (We start working as soon as you ask)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Unlimited site changes, custom code, and new features</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-labAccent shrink-0 mr-3 mt-0.5"></i>
+                            <span>Direct VIP 1-on-1 support</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#contact" class="w-full block text-center py-3 px-6 rounded border-2 border-labBlue text-labBlue font-bold tracking-wider hover:bg-labBlue hover:text-white transition-colors uppercase text-xs">
+                        Hire Dedicated Developer
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 px-6 border-t border-labBlue/5 bg-white/40">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair font-bold text-3xl md:text-4xl text-labBlue mb-4">Why Choose Our Support Plans?</h2>
+                <div class="w-16 h-1 bg-labAccent mx-auto rounded"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-labLight rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="credit-card" class="w-7 h-7 text-labAccent"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3">No Broken Checkouts</h3>
+                    <p class="text-sm text-labBlue/70 leading-relaxed">
+                        We keep your payment gateways running smoothly so you don't lose sales. Zero downtime during crucial transactions.
+                    </p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-labLight rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="shield-check" class="w-7 h-7 text-labAccent"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3">100% Secure & Backed Up</h3>
+                    <p class="text-sm text-labBlue/70 leading-relaxed">
+                        Your store data is safe in the cloud and guarded against malware. We monitor your site around the clock for total security.
+                    </p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-labLight rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="coffee" class="w-7 h-7 text-labAccent"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3">Total Peace of Mind</h3>
+                    <p class="text-sm text-labBlue/70 leading-relaxed">
+                        No technical stress—whenever something breaks, your developer fixes it fast. Focus on your business, not website bugs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair font-bold text-3xl md:text-4xl text-labBlue mb-4">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white border border-labBlue/10 rounded-lg p-6 hover:border-labAccent/20 transition-colors">
+                    <h4 class="font-bold text-lg flex items-start text-labBlue">
+                        <i data-lucide="help-circle" class="w-5 h-5 text-labAccent mr-3 shrink-0 mt-0.5"></i>
+                        Can I cancel or change my plan anytime?
+                    </h4>
+                    <p class="mt-3 text-labBlue/70 text-sm ml-8 leading-relaxed">
+                        Yes, all plans are month-to-month with no long-term contracts. You can upgrade, downgrade, or cancel whenever you need.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white border border-labBlue/10 rounded-lg p-6 hover:border-labAccent/20 transition-colors">
+                    <h4 class="font-bold text-lg flex items-start text-labBlue">
+                        <i data-lucide="help-circle" class="w-5 h-5 text-labAccent mr-3 shrink-0 mt-0.5"></i>
+                        How do I request a website change?
+                    </h4>
+                    <p class="mt-3 text-labBlue/70 text-sm ml-8 leading-relaxed">
+                        Simply send us a message or email, and we will take care of it according to your plan's speed and priority level.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white border border-labBlue/10 rounded-lg p-6 hover:border-labAccent/20 transition-colors">
+                    <h4 class="font-bold text-lg flex items-start text-labBlue">
+                        <i data-lucide="help-circle" class="w-5 h-5 text-labAccent mr-3 shrink-0 mt-0.5"></i>
+                        What if my payment gateway goes down?
+                    </h4>
+                    <p class="mt-3 text-labBlue/70 text-sm ml-8 leading-relaxed">
+                        We jump in, speak to the processor, and fix the issue based on your plan's guaranteed response time to minimize lost sales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="py-16 bg-labBlue text-white text-center px-6">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-playfair font-bold text-3xl mb-6">Ready to secure your website?</h2>
+            <p class="text-white/70 mb-8">Join the brands that trust Molecular Matrix for their digital infrastructure.</p>
+            <a href="mailto:support@molecularmatrix.online" class="inline-flex items-center space-x-2 bg-labAccent text-white px-8 py-3 rounded text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-labBlue transition-colors">
+                <span>Contact Support Team</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="w-full bg-[#ebe6cc] border-t border-[#3A5638]/10 py-10">
+        <div class="px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-[#3A5638]/70">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <a href="/" class="flex items-center justify-center md:justify-start space-x-2 mb-2">
+                    <span class="font-playfair font-bold text-xl text-labBlue">Molecular <span class="italic text-labAccent">Matrix</span></span>
+                </a>
+                <div class="space-y-1">
+                    <a href="mailto:support@molecularmatrix.online" class="underline text-[#3A5638]/90 text-[13px] block">support@molecularmatrix.online</a>
+                    <a href="https://wa.me/447846766322" target="_blank" class="flex items-center justify-center md:justify-start space-x-2 text-[13px] text-labAccent font-bold hover:underline">
+                        <i data-lucide="message-circle" class="w-3 h-3"></i>
+                        <span>+44 7846 766322</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex space-x-8 mb-6 md:mb-0 justify-center font-space text-[13px] font-medium">
+                <a href="/privacy" class="hover:text-labAccent transition-colors">Privacy</a>
+                <a href="/contact" class="hover:text-labAccent transition-colors">Contact</a>
+                <a href="/terms" class="hover:text-labAccent transition-colors">Terms</a>
+            </div>
+            
+            <div class="text-center md:text-right font-space text-[13px]">
+                © 2026 Molecular Matrix
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Widget -->
+    <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
+        <!-- Chat Popup -->
+        <div id="wa-popup" class="bg-white rounded-xl shadow-2xl p-6 mb-4 w-72 transform translate-y-4 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-right">
+            <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-100">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-[#25D366]/10 rounded-full flex items-center justify-center">
+                        <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366]"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">Molecular Matrix</h4>
+                        <p class="text-xs text-gray-500">Typically replies instantly</p>
+                    </div>
+                </div>
+                <button id="wa-close" class="text-gray-400 hover:text-gray-600 transition-colors">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+            <p class="text-sm text-gray-600 mb-4">Hi there! 👋 How can we help you with our support plans today?</p>
+            <a href="https://wa.me/447846766322" target="_blank" class="w-full flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3 px-4 rounded-lg font-bold transition-colors shadow-lg shadow-[#25D366]/30">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Chat Now</span>
+            </a>
+        </div>
+
+        <!-- Floating Tooltip -->
+        <div id="wa-tooltip" class="absolute bottom-20 right-0 bg-white text-gray-800 text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap animate-tooltip pointer-events-none border border-gray-100 transition-opacity duration-300">
+            Chat with us now 👋
+            <div class="absolute -bottom-2 right-5 w-4 h-4 bg-white border-b border-r border-gray-100 transform rotate-45"></div>
+        </div>
+
+        <!-- Floating Button -->
+        <button id="wa-btn" class="bg-[#25D366] hover:bg-[#20bd5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/30 transition-transform hover:scale-110 active:scale-95 relative z-10">
+            <i data-lucide="message-circle" class="w-7 h-7 wa-icon-chat"></i>
+            <i data-lucide="x" class="w-7 h-7 wa-icon-close hidden"></i>
+        </button>
+    </div>
+
+    <script>
+        // Lucide Icons
+        lucide.createIcons();
+
+        // Sticky Nav Logic
+        const mainNav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                mainNav.classList.add('nav-scrolled');
+                mainNav.style.padding = '0.6rem 1.5rem';
+            } else {
+                mainNav.classList.remove('nav-scrolled');
+                mainNav.style.padding = '1rem 1.5rem';
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileClose = document.getElementById('mobile-menu-close');
+        if (mobileBtn) mobileBtn.addEventListener('click', () => mobileMenu.classList.remove('translate-x-full'));
+        if (mobileClose) mobileClose.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+
+        // WhatsApp Widget Logic
+        const waBtn = document.getElementById('wa-btn');
+        const waPopup = document.getElementById('wa-popup');
+        const waClose = document.getElementById('wa-close');
+        const waTooltip = document.getElementById('wa-tooltip');
+        const waIconChat = document.querySelector('.wa-icon-chat');
+        const waIconClose = document.querySelector('.wa-icon-close');
+        
+        let waIsOpen = false;
+
+        function toggleWaPopup() {
+            waIsOpen = !waIsOpen;
+            if (waIsOpen) {
+                waPopup.classList.remove('translate-y-4', 'opacity-0', 'pointer-events-none');
+                waPopup.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                if (waTooltip) waTooltip.classList.remove('animate-tooltip');
+                if (waTooltip) waTooltip.classList.add('opacity-0');
+                waIconChat.classList.add('hidden');
+                waIconClose.classList.remove('hidden');
+            } else {
+                waPopup.classList.add('translate-y-4', 'opacity-0', 'pointer-events-none');
+                waPopup.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                if (waTooltip) waTooltip.classList.add('animate-tooltip');
+                if (waTooltip) waTooltip.classList.remove('opacity-0');
+                waIconChat.classList.remove('hidden');
+                waIconClose.classList.add('hidden');
+            }
+        }
+
+        if (waBtn) waBtn.addEventListener('click', toggleWaPopup);
+        if (waClose) waClose.addEventListener('click', toggleWaPopup);
+    </script>
+</body>
+</html>
