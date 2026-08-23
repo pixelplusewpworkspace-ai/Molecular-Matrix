@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peptide Website Payment Gateway Approval | Molecular Matrix</title>
+    <meta name="description" content="Specialized high-risk merchant account and payment gateway approval services for peptide websites. Fast, reliable solutions tailored for the peptide industry.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        labBlue: '#142114',
+                        labAccent: '#1a6330',
+                        labLight: '#ede8c6',
+                    },
+                    fontFamily: {
+                        playfair: ['Playfair Display', 'serif'],
+                        space: ['Space Grotesk', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .blur-reveal {
+            filter: blur(12px);
+            opacity: 0.2;
+            transition: filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease-out;
+            will-change: filter, opacity;
+        }
+        .blur-reveal.revealed {
+            filter: blur(0);
+            opacity: 1;
+        }
+
+        /* Sticky Nav */
+        #main-nav.nav-scrolled {
+            background: rgba(237, 232, 198, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(58, 86, 56, 0.08);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.04);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: #1a6330;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Hero Fade Up */
+        @keyframes heroFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-fade-up {
+            opacity: 0;
+            animation: heroFadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Ticker Animation */
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-ticker {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+        }
+
+        /* Chat Tooltip Animation */
+        @keyframes pulseTooltip {
+            0%, 100% { opacity: 0; transform: translateY(10px); }
+            50% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-tooltip {
+            animation: pulseTooltip 3s ease-in-out infinite;
+        }
+    </style>
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What payment processors work with peptide businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only specialized high-risk payment processors and acquiring banks work with peptide businesses. Mainstream gateways like Stripe, PayPal, or Square do not allow peptide sales and will eventually close your account. We partner with specialized banks that explicitly underwrite the peptide industry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do peptide websites get rejected by normal payment gateways?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Peptides fall under a highly regulated category. Processors classify them as high-risk due to FDA regulations, the potential for non-research human consumption, and high chargeback rates. Standard gateways avoid this risk entirely, leading to swift rejections or frozen funds for peptide merchants."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does high-risk merchant approval take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a peptide website, the underwriting process is more rigorous than standard accounts. Once all required compliance documents are submitted, approval typically takes between 7-14 business days, depending on the specific acquiring bank's review process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you also build the website, or just handle payment approval?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We can do both. While we specialize in securing high-risk merchant accounts and integrating the gateway, Molecular Matrix is a full-service web agency. We can build your peptide website from scratch or simply integrate the payment solution into your existing site."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="bg-labLight text-labBlue font-space overflow-x-hidden text-sm">
+
+    <!-- Top Pipeline Bar -->
+    <div class="fixed top-0 left-0 w-full z-[60] bg-[#0c140e] text-[9px] text-white/50 py-1.5 overflow-hidden font-space uppercase tracking-widest border-b border-white/5">
+        <div class="animate-ticker">
+            <div class="flex items-center space-x-12 px-6">
+                <div class="flex items-center space-x-2"><span class="bg-green-500 w-1.5 h-1.5 rounded-full animate-pulse"></span><span class="text-white font-bold">LIVE</span> <span class="text-green-400">PIPELINE</span></div>
+                <div>Outpost HQ <span class="text-white">Success Case Mapped</span></div>
+                <div>Harbor Health <span class="text-white">Conversion Optimization +14%</span></div>
+                <div>TravelArrow <span class="text-white">Scale Protocol Active</span></div>
+                <div>FIELDSTACK <span class="text-white">Gateway Recovery Complete</span></div>
+                <div class="flex items-center space-x-2"><span class="bg-green-500 w-1.5 h-1.5 rounded-full animate-pulse"></span><span class="text-white font-bold">LIVE</span> <span class="text-green-400">PIPELINE</span></div>
+                <div>Outpost HQ <span class="text-white">Success Case Mapped</span></div>
+                <div>Harbor Health <span class="text-white">Conversion Optimization +14%</span></div>
+                <div>TravelArrow <span class="text-white">Scale Protocol Active</span></div>
+                <div>FIELDSTACK <span class="text-white">Gateway Recovery Complete</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-[28px] left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-4 transition-all duration-500 bg-labLight border-b border-[#3A5638]/5">
+        <a href="/" class="flex items-center space-x-2">
+            <span class="font-playfair font-bold text-xl text-labBlue">Molecular <span class="italic text-labAccent">Matrix</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-[13px] font-medium text-labBlue/80">
+            <a href="index.html#mirror" class="nav-link hover:text-labAccent transition-colors relative">Pain Points</a>
+            <a href="index.html#services" class="nav-link hover:text-labAccent transition-colors relative">Services</a>
+            <a href="performance.html" class="nav-link hover:text-labAccent transition-colors relative">Proven Results</a>
+            <a href="index.html#authority" class="nav-link hover:text-labAccent transition-colors relative">Why Us</a>
+            <a href="support-plans.html" class="matrix-btn bg-[#3A5638] text-[#f4f2dd] border border-[#3A5638] px-6 py-2 rounded-sm hover:text-white transition-all text-xs font-bold tracking-wider uppercase">Support Plans</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-btn" class="p-2"><i data-lucide="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-labLight z-[100] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-8 md:hidden">
+        <!-- Menu Header -->
+        <div class="flex items-center justify-between mb-16">
+            <a href="/" class="flex items-center space-x-2">
+                <span class="font-playfair font-bold text-2xl text-labBlue">Molecular <span class="italic text-labAccent">Matrix</span></span>
+            </a>
+            <button id="mobile-menu-close" class="p-2 bg-labBlue/5 rounded-full"><i data-lucide="x" class="w-6 h-6"></i></button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="flex flex-col space-y-6 mb-auto">
+            <a href="index.html#mirror" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Pain Points</a>
+            <a href="index.html#solution" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Solution</a>
+            <a href="index.html#services" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Services</a>
+            <a href="performance.html" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Proven Results</a>
+            <a href="use-cases.html" class="text-lg font-bold text-labBlue hover:text-labAccent transition-colors tracking-[0.2em] uppercase">Use Cases</a>
+            <a href="support-plans.html" class="text-lg font-bold text-labAccent border-b-2 border-labAccent/20 pb-2 inline-block tracking-[0.2em] uppercase">Support Plans</a>
+        </div>
+
+        <!-- Menu Footer -->
+        <div class="pt-8 border-t border-labBlue/10">
+            <p class="text-[10px] font-bold text-labBlue/40 uppercase tracking-[0.3em] mb-4">Contact Protocol</p>
+            <a href="mailto:support@molecularmatrix.online" class="text-base font-medium text-labBlue underline decoration-labAccent/30 mb-8 block font-space">support@molecularmatrix.online</a>
+        </div>
+    </div>
+
+    <!-- Hero / Content Section -->
+    <section class="pt-44 pb-20 bg-labLight border-b border-labBlue/5">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="hero-fade-up inline-flex items-center space-x-3 text-labAccent font-space text-[10px] tracking-[0.4em] font-bold uppercase mb-8 border border-labAccent/20 px-5 py-2 rounded-full">
+                    <span class="w-1.5 h-1.5 bg-labAccent rounded-full animate-pulse"></span>
+                    <span>HIGH-RISK MERCHANT SERVICES</span>
+                </div>
+                <h1 class="hero-fade-up font-playfair font-bold text-4xl md:text-[56px] text-labBlue leading-[1.1] mb-8" style="animation-delay: 0.2s">
+                    Who Can Help Get a Payment Gateway Approved for a Peptide Website?
+                </h1>
+                
+                <div class="hero-fade-up font-space text-[15px] md:text-[17px] text-[#3A5638]/90 max-w-3xl mx-auto leading-relaxed text-left space-y-6" style="animation-delay: 0.4s">
+                    <p>
+                        Molecular Matrix specializes in securing high-risk merchant account and payment gateway approvals specifically for peptide businesses. If you've been searching for a stable processor for your research peptide or cosmetic peptide website, you've likely encountered immediate rejections or frozen funds.
+                    </p>
+                    <p>
+                        Peptide businesses are heavily classified as high-risk by traditional banks due to strict regulatory scrutiny, chargeback risks, and complex compliance requirements. A standard processor like Stripe, Square, or PayPal will inevitably shut down a peptide merchant. You need a specialized approach that partners directly with high-risk acquiring banks that understand the industry and won't hold your funds hostage.
+                    </p>
+                    <p>
+                        Our process is simple and direct: we prepare your application to ensure full compliance, match you with the right high-risk processor, secure your approval, and handle the technical integration straight into your website. Typical approvals take between <strong>7-14 business days</strong>. We ensure your business is structured correctly so you can process payments without fear of sudden account closure.
+                    </p>
+                </div>
+                
+                <div class="hero-fade-up mt-10" style="animation-delay: 0.6s">
+                    <a href="contact.html" class="inline-flex items-center space-x-2 bg-labAccent text-white px-8 py-3 rounded text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-labBlue hover:border-labAccent border border-transparent transition-colors">
+                        <span>Get Consultation Now</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair font-bold text-3xl md:text-4xl text-labBlue mb-4">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white border border-labBlue/10 rounded-lg p-6 hover:border-labAccent/20 transition-colors">
+                    <h4 class="font-bold text-lg flex items-start text-labBlue">
+                        <i data-lucide="help-circle" class="w-5 h-5 text-labAccent mr-3 shrink-0 mt-0.5"></i>
+                        What payment processors work with peptide businesses?
+                    </h4>
+                    <p class="mt-3 text-labBlue/70 text-sm ml-8 leading-relaxed">
+                        Only specialized high-risk payment processors and acquiring banks work with peptide businesses. Mainstream gateways like Stripe, PayPal, or Square do not allow peptide sales and will eventually close your account. We partner with specialized banks that explicitly underwrite the peptide industry.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white border border-labBlue/10 rounded-lg p-6 hover:border-labAccent/20 transition-colors">
+                    <h4 class="font-bold text-lg flex items-start text-labBlue">
+                        <i data-lucide="help-circle" class="w-5 h-5 text-labAccent mr-3 shrink-0 mt-0.5"></i>
+                        Why do peptide websites get rejected by normal payment gateways?
+                    </h4>
+                    <p class="mt-3 text-labBlue/70 text-sm ml-8 leading-relaxed">
+                        Peptides fall under a highly regulated category. Processors classify them as high-risk due to FDA regulations, the potential for non-research human consumption, and high chargeback rates. Standard gateways avoid this risk entirely, leading to swift rejections or frozen funds for peptide merchants.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white border border-labBlue/10 rounded-lg p-6 hover:border-labAccent/20 transition-colors">
+                    <h4 class="font-bold text-lg flex items-start text-labBlue">
+                        <i data-lucide="help-circle" class="w-5 h-5 text-labAccent mr-3 shrink-0 mt-0.5"></i>
+                        How long does high-risk merchant approval take?
+                    </h4>
+                    <p class="mt-3 text-labBlue/70 text-sm ml-8 leading-relaxed">
+                        For a peptide website, the underwriting process is more rigorous than standard accounts. Once all required compliance documents are submitted, approval typically takes between 7-14 business days, depending on the specific acquiring bank's review process.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white border border-labBlue/10 rounded-lg p-6 hover:border-labAccent/20 transition-colors">
+                    <h4 class="font-bold text-lg flex items-start text-labBlue">
+                        <i data-lucide="help-circle" class="w-5 h-5 text-labAccent mr-3 shrink-0 mt-0.5"></i>
+                        Do you also build the website, or just handle payment approval?
+                    </h4>
+                    <p class="mt-3 text-labBlue/70 text-sm ml-8 leading-relaxed">
+                        We can do both. While we specialize in securing high-risk merchant accounts and integrating the gateway, Molecular Matrix is a full-service web agency. We can build your peptide website from scratch or simply integrate the payment solution into your existing site.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="py-16 bg-labBlue text-white text-center px-6">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-playfair font-bold text-3xl mb-6">Ready to secure your peptide merchant account?</h2>
+            <p class="text-white/70 mb-8">Partner with experts who understand your industry and technical needs.</p>
+            <a href="contact.html" class="inline-flex items-center space-x-2 bg-labAccent text-white px-8 py-3 rounded text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-labBlue transition-colors">
+                <span>Start Your Application</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="w-full bg-[#ebe6cc] border-t border-[#3A5638]/10 py-10">
+        <div class="px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-[#3A5638]/70">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <a href="/" class="flex items-center justify-center md:justify-start space-x-2 mb-2">
+                    <span class="font-playfair font-bold text-xl text-labBlue">Molecular <span class="italic text-labAccent">Matrix</span></span>
+                </a>
+                <div class="space-y-1">
+                    <a href="mailto:support@molecularmatrix.online" class="underline text-[#3A5638]/90 text-[13px] block">support@molecularmatrix.online</a>
+                    <a href="https://wa.me/447846766322" target="_blank" class="flex items-center justify-center md:justify-start space-x-2 text-[13px] text-labAccent font-bold hover:underline">
+                        <i data-lucide="message-circle" class="w-3 h-3"></i>
+                        <span>+44 7846 766322</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex space-x-8 mb-6 md:mb-0 justify-center font-space text-[13px] font-medium">
+                <a href="/privacy" class="hover:text-labAccent transition-colors">Privacy</a>
+                <a href="/contact" class="hover:text-labAccent transition-colors">Contact</a>
+                <a href="/terms" class="hover:text-labAccent transition-colors">Terms</a>
+                <a href="/peptide-payment-gateway.html" class="hover:text-labAccent transition-colors">Peptide Payments</a>
+            </div>
+            
+            <div class="text-center md:text-right font-space text-[13px]">
+                © 2026 Molecular Matrix
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Widget -->
+    <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
+        <!-- Chat Popup -->
+        <div id="wa-popup" class="bg-white rounded-xl shadow-2xl p-6 mb-4 w-72 transform translate-y-4 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-right">
+            <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-100">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-[#25D366]/10 rounded-full flex items-center justify-center">
+                        <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366]"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">Molecular Matrix</h4>
+                        <p class="text-xs text-gray-500">Typically replies instantly</p>
+                    </div>
+                </div>
+                <button id="wa-close" class="text-gray-400 hover:text-gray-600 transition-colors">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+            <p class="text-sm text-gray-600 mb-4">Hi there! 👋 How can we help you get approved for a peptide payment gateway today?</p>
+            <a href="https://wa.me/447846766322" target="_blank" class="w-full flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3 px-4 rounded-lg font-bold transition-colors shadow-lg shadow-[#25D366]/30">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Chat Now</span>
+            </a>
+        </div>
+
+        <!-- Floating Tooltip -->
+        <div id="wa-tooltip" class="absolute bottom-20 right-0 bg-white text-gray-800 text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap animate-tooltip pointer-events-none border border-gray-100 transition-opacity duration-300">
+            Chat with us now 👋
+            <div class="absolute -bottom-2 right-5 w-4 h-4 bg-white border-b border-r border-gray-100 transform rotate-45"></div>
+        </div>
+
+        <!-- Floating Button -->
+        <button id="wa-btn" class="bg-[#25D366] hover:bg-[#20bd5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/30 transition-transform hover:scale-110 active:scale-95 relative z-10">
+            <i data-lucide="message-circle" class="w-7 h-7 wa-icon-chat"></i>
+            <i data-lucide="x" class="w-7 h-7 wa-icon-close hidden"></i>
+        </button>
+    </div>
+
+    <script>
+        // Lucide Icons
+        lucide.createIcons();
+
+        // Sticky Nav Logic
+        const mainNav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                mainNav.classList.add('nav-scrolled');
+                mainNav.style.padding = '0.6rem 1.5rem';
+            } else {
+                mainNav.classList.remove('nav-scrolled');
+                mainNav.style.padding = '1rem 1.5rem';
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileClose = document.getElementById('mobile-menu-close');
+        if (mobileBtn) mobileBtn.addEventListener('click', () => mobileMenu.classList.remove('translate-x-full'));
+        if (mobileClose) mobileClose.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+
+        // WhatsApp Widget Logic
+        const waBtn = document.getElementById('wa-btn');
+        const waPopup = document.getElementById('wa-popup');
+        const waClose = document.getElementById('wa-close');
+        const waTooltip = document.getElementById('wa-tooltip');
+        const waIconChat = document.querySelector('.wa-icon-chat');
+        const waIconClose = document.querySelector('.wa-icon-close');
+        
+        let waIsOpen = false;
+
+        function toggleWaPopup() {
+            waIsOpen = !waIsOpen;
+            if (waIsOpen) {
+                waPopup.classList.remove('translate-y-4', 'opacity-0', 'pointer-events-none');
+                waPopup.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                if (waTooltip) waTooltip.classList.remove('animate-tooltip');
+                if (waTooltip) waTooltip.classList.add('opacity-0');
+                waIconChat.classList.add('hidden');
+                waIconClose.classList.remove('hidden');
+            } else {
+                waPopup.classList.add('translate-y-4', 'opacity-0', 'pointer-events-none');
+                waPopup.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                if (waTooltip) waTooltip.classList.add('animate-tooltip');
+                if (waTooltip) waTooltip.classList.remove('opacity-0');
+                waIconChat.classList.remove('hidden');
+                waIconClose.classList.add('hidden');
+            }
+        }
+
+        if (waBtn) waBtn.addEventListener('click', toggleWaPopup);
+        if (waClose) waClose.addEventListener('click', toggleWaPopup);
+    </script>
+</body>
+</html>
