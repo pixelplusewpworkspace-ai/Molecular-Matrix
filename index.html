@@ -1149,7 +1149,7 @@
                 <!-- Right: Service List Container (Carousel on mobile, Stack on desktop) -->
                 <div class="lg:col-span-8 lg:col-start-6 overflow-hidden md:overflow-visible">
                     <!-- Services Carousel Track -->
-                    <div id="services-carousel-track" class="flex md:block gap-4 md:space-y-24 w-[600%] md:w-full items-stretch transition-transform duration-500 ease-out">
+                    <div id="services-carousel-track" class="flex md:block gap-4 md:space-y-24 w-[700%] md:w-full items-stretch transition-transform duration-500 ease-out">
                         
                         <!-- Service 1 -->
                         <div class="w-1/6 md:w-auto shrink-0 group relative bg-white/5 border border-labBlue/5 rounded-sm p-8 md:p-10 transition-all duration-500 hover:bg-white/10 hover:border-labAccent/20 hover:shadow-[0_20px_50px_rgba(26,99,48,0.05)] blur-reveal">
@@ -1304,6 +1304,30 @@
                             </div>
                         </div>
 
+
+                        <!-- Service 7 -->
+                        <div class="w-1/6 md:w-auto shrink-0 group relative bg-white/5 border border-labBlue/5 rounded-sm p-8 md:p-10 transition-all duration-500 hover:bg-white/10 hover:border-labAccent/20 hover:shadow-[0_20px_50px_rgba(26,99,48,0.05)] blur-reveal">
+                            <div class="flex flex-col md:flex-row gap-6 md:gap-10">
+                                <div class="flex flex-col items-start gap-4 w-16 shrink-0 pt-2">
+                                    <div class="font-space text-xl md:text-2xl font-bold text-labBlue/10 tracking-widest group-hover:text-labAccent/20 transition-colors">07</div>
+                                    <div class="w-12 h-12 rounded-sm bg-labBlue/5 flex items-center justify-center group-hover:bg-labAccent/10 group-hover:rotate-6 transition-all duration-500">
+                                        <i data-lucide="mail" class="w-5 h-5 text-labBlue group-hover:text-labAccent transition-colors"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="font-playfair font-bold text-2xl md:text-3xl text-labBlue mb-4 transition-colors">Dedicated Email Servers</h3>
+                                    <p class="font-space text-[#3A5638]/80 text-xs md:text-sm leading-relaxed max-w-lg mb-8">
+                                        Specialized, ban-resistant email infrastructure built for high-risk businesses. Execute high-volume campaigns without a marketing team or fear of third-party shutdowns.
+                                    </p>
+                                    <div class="flex flex-wrap gap-x-6 gap-y-3 font-space text-[11px] font-bold text-labBlue/40 uppercase tracking-widest">
+                                        <span class="flex items-center"><span class="w-1 h-1 bg-labAccent rounded-full mr-2"></span> High Deliverability</span>
+                                        <span class="flex items-center"><span class="w-1 h-1 bg-labAccent rounded-full mr-2"></span> Anti-Ban Configs</span>
+                                        <span class="flex items-center"><span class="w-1 h-1 bg-labAccent rounded-full mr-2"></span> Automated Campaigns</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <!-- Mobile Only Indicators/Controls -->
@@ -1318,6 +1342,7 @@
                             <span onclick="showServiceSlide(3)" class="w-2 h-2 rounded-full bg-labAccent/30 cursor-pointer transition-all duration-300" id="services-dot-3"></span>
                             <span onclick="showServiceSlide(4)" class="w-2 h-2 rounded-full bg-labAccent/30 cursor-pointer transition-all duration-300" id="services-dot-4"></span>
                             <span onclick="showServiceSlide(5)" class="w-2 h-2 rounded-full bg-labAccent/30 cursor-pointer transition-all duration-300" id="services-dot-5"></span>
+                            <span onclick="showServiceSlide(6)" class="w-2 h-2 rounded-full bg-labAccent/30 cursor-pointer transition-all duration-300" id="services-dot-6"></span>
                         </div>
                         <button onclick="nextServiceSlide()" class="w-8 h-8 rounded-full border border-labAccent/20 flex items-center justify-center text-labBlue hover:bg-labAccent/10 active:scale-95 transition-all">
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
@@ -2527,7 +2552,7 @@
 
             // Mobile Services carousel logic
             let currentServiceSlide = 0;
-            const totalServiceSlides = 6;
+            const totalServiceSlides = 7;
 
             window.showServiceSlide = function(index) {
                 if (index < 0) index = 0;

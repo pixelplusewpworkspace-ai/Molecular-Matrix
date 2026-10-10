@@ -363,6 +363,384 @@
     <section class="py-24 bg-labLight">
         <div class="container mx-auto px-6 md:px-12 relative">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Case 25 -->
+                <div onclick="openCaseModal('case-25')" onmouseenter="openCaseModal('case-25')" onmouseleave="closeCaseModal('case-25')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative">
+                    <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
+                        <img src="use cases/use case 25.webp" alt="FDA Compliance and Credit Card Processing" class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <div class="flex items-center space-x-1 mb-3">
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-base text-labBlue mb-2 leading-tight">FDA Compliant Build with Instant Processing Approval</h3>
+                        <p class="text-[12px] text-[#3A5638]/70 leading-relaxed">
+                            Architected a fully FDA-compliant platform and successfully activated robust credit card processing on the very first attempt, bypassing common high-risk gateway delays.
+                        </p>
+                        <!-- Mobile Only Hint -->
+                        <div class="md:hidden flex items-center space-x-2 mt-4 text-labAccent font-bold text-[10px] tracking-widest uppercase">
+                            <span>View Case</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+
+                    <!-- Speech Bubble Tooltip -->
+                    <div id="case-25-bubble" class="fixed md:absolute inset-x-6 md:inset-x-auto md:left-full top-1/2 -translate-y-1/2 md:ml-2.5 w-auto md:w-80 text-white rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,1)] opacity-0 pointer-events-none md:translate-x-4 transition-all duration-300 border border-white/10" style="background: #000000 !important; opacity: 0; z-index: 999 !important;">
+                        <button onclick="event.stopPropagation(); closeCaseModal('case-25')" class="md:hidden absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/10 rounded-full text-white/70">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                        <div class="p-6">
+                            <div class="w-full h-36 bg-[#050505] rounded-xl overflow-hidden mb-5 relative border border-white/10">
+                                <div class="absolute inset-0 transition-opacity duration-1000" id="case-25-slide-1">
+                                    <img src="use cases/use case 25.webp" alt="FDA Compliance" class="w-full h-full object-cover opacity-90">
+                                    <div class="absolute top-3 left-3 bg-black/40 backdrop-blur-md text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">FDA COMPLIANT</div>
+                                </div>
+                                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="case-25-slide-2">
+                                    <img src="use cases/use case 25 25.webp" alt="Processing Active" class="w-full h-full object-cover opacity-90 scale-105 origin-center">
+                                    <div class="absolute top-3 left-3 bg-labAccent text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">PROCESSING ACTIVE</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-[10px] font-bold text-labAccent tracking-[0.2em] uppercase">Protocol_Archive_25</h4>
+                                <div class="flex space-x-1">
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                </div>
+                            </div>
+                            <p class="text-[13px] font-medium leading-relaxed mb-5 text-white/90">Built a complete FDA-compliant web platform with an instant, successful credit card processing approval.</p>
+                            <div class="bg-white/5 rounded-lg p-4 border border-white/5">
+                                <p class="text-[11px] italic text-white/60 leading-relaxed">"Getting a high-risk merchant gateway approved usually takes multiple attempts. Molecular Matrix ensured total FDA compliance and got our credit card processing active immediately on the first try!"</p>
+                                <div class="mt-3 flex items-center space-x-2">
+                                    <div class="w-4 h-4 bg-labAccent rounded-full flex items-center justify-center"><i data-lucide="check" class="w-2 h-2 text-white"></i></div>
+                                    <span class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Protocol_Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute right-full top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-black" style="border-right-color: #000000 !important;"></div>
+                    </div>
+                </div>
+
+                <!-- Case 24 -->
+                <div onclick="openCaseModal('case-24')" onmouseenter="openCaseModal('case-24')" onmouseleave="closeCaseModal('case-24')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative">
+                    <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
+                        <img src="use cases/use case 24.webp" alt="Fully Functional Site with COA Library" class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <div class="flex items-center space-x-1 mb-3">
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-base text-labBlue mb-2 leading-tight">Fully Functional Platform with COA Library Integration</h3>
+                        <p class="text-[12px] text-[#3A5638]/70 leading-relaxed">
+                            Engineered a comprehensive, fully functional website featuring an advanced, integrated COA (Certificate of Analysis) library for strict bio-science regulatory compliance and transparency.
+                        </p>
+                        <!-- Mobile Only Hint -->
+                        <div class="md:hidden flex items-center space-x-2 mt-4 text-labAccent font-bold text-[10px] tracking-widest uppercase">
+                            <span>View Case</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+
+                    <!-- Speech Bubble Tooltip -->
+                    <div id="case-24-bubble" class="fixed md:absolute inset-x-6 md:inset-x-auto md:left-full top-1/2 -translate-y-1/2 md:ml-2.5 w-auto md:w-80 text-white rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,1)] opacity-0 pointer-events-none md:translate-x-4 transition-all duration-300 border border-white/10" style="background: #000000 !important; opacity: 0; z-index: 999 !important;">
+                        <button onclick="event.stopPropagation(); closeCaseModal('case-24')" class="md:hidden absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/10 rounded-full text-white/70">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                        <div class="p-6">
+                            <div class="w-full h-36 bg-[#050505] rounded-xl overflow-hidden mb-5 relative border border-white/10">
+                                <div class="absolute inset-0 transition-opacity duration-1000" id="case-24-slide-1">
+                                    <img src="use cases/use case 24.webp" alt="Full Site Build" class="w-full h-full object-cover opacity-90">
+                                    <div class="absolute top-3 left-3 bg-black/40 backdrop-blur-md text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">FULL BUILD</div>
+                                </div>
+                                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="case-24-slide-2">
+                                    <img src="use cases/use case 24.webp" alt="COA Library" class="w-full h-full object-cover opacity-90 scale-105 origin-center">
+                                    <div class="absolute top-3 left-3 bg-labAccent text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">COA LIBRARY</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-[10px] font-bold text-labAccent tracking-[0.2em] uppercase">Protocol_Archive_24</h4>
+                                <div class="flex space-x-1">
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                </div>
+                            </div>
+                            <p class="text-[13px] font-medium leading-relaxed mb-5 text-white/90">Built a full-featured website armed with a dedicated Certificate of Analysis (COA) library to ensure complete industry compliance.</p>
+                            <div class="bg-white/5 rounded-lg p-4 border border-white/5">
+                                <p class="text-[11px] italic text-white/60 leading-relaxed">"We needed a highly robust site that could handle our complex COA requirements. Molecular Matrix delivered a perfect platform with a fully functional COA library seamlessly integrated."</p>
+                                <div class="mt-3 flex items-center space-x-2">
+                                    <div class="w-4 h-4 bg-labAccent rounded-full flex items-center justify-center"><i data-lucide="check" class="w-2 h-2 text-white"></i></div>
+                                    <span class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Protocol_Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute right-full top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-black" style="border-right-color: #000000 !important;"></div>
+                    </div>
+                </div>
+
+                <!-- Case 23 -->
+                <div onclick="openCaseModal('case-23')" onmouseenter="openCaseModal('case-23')" onmouseleave="closeCaseModal('case-23')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative">
+                    <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
+                        <img src="use cases/use case 23.webp" alt="FDA Compliant High-Speed Website" class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <div class="flex items-center space-x-1 mb-3">
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-base text-labBlue mb-2 leading-tight">High-Speed FDA Compliant Web Development</h3>
+                        <p class="text-[12px] text-[#3A5638]/70 leading-relaxed">
+                            Architected and deployed a fully FDA-compliant bio-science web platform with extreme performance optimization, delivering super-fast loading speeds without compromising regulatory adherence.
+                        </p>
+                        <!-- Mobile Only Hint -->
+                        <div class="md:hidden flex items-center space-x-2 mt-4 text-labAccent font-bold text-[10px] tracking-widest uppercase">
+                            <span>View Case</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+
+                    <!-- Speech Bubble Tooltip -->
+                    <div id="case-23-bubble" class="fixed md:absolute inset-x-6 md:inset-x-auto md:left-full top-1/2 -translate-y-1/2 md:ml-2.5 w-auto md:w-80 text-white rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,1)] opacity-0 pointer-events-none md:translate-x-4 transition-all duration-300 border border-white/10" style="background: #000000 !important; opacity: 0; z-index: 999 !important;">
+                        <button onclick="event.stopPropagation(); closeCaseModal('case-23')" class="md:hidden absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/10 rounded-full text-white/70">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                        <div class="p-6">
+                            <div class="w-full h-36 bg-[#050505] rounded-xl overflow-hidden mb-5 relative border border-white/10">
+                                <div class="absolute inset-0 transition-opacity duration-1000" id="case-23-slide-1">
+                                    <img src="use cases/use case 23.webp" alt="FDA Compliant Build" class="w-full h-full object-cover opacity-90">
+                                    <div class="absolute top-3 left-3 bg-black/40 backdrop-blur-md text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">FDA COMPLIANT</div>
+                                </div>
+                                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="case-23-slide-2">
+                                    <img src="use cases/use case 23 23.webp" alt="Super Speed Active" class="w-full h-full object-cover opacity-90 scale-105 origin-center">
+                                    <div class="absolute top-3 left-3 bg-labAccent text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">SUPER SPEED</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-[10px] font-bold text-labAccent tracking-[0.2em] uppercase">Protocol_Archive_23</h4>
+                                <div class="flex space-x-1">
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                </div>
+                            </div>
+                            <p class="text-[13px] font-medium leading-relaxed mb-5 text-white/90">Engineered a highly optimized, super-fast website while ensuring 100% FDA compliance for the bio-science sector.</p>
+                            <div class="bg-white/5 rounded-lg p-4 border border-white/5">
+                                <p class="text-[11px] italic text-white/60 leading-relaxed">"Molecular Matrix built our site with incredible speed optimization while strictly adhering to all FDA compliance guidelines. The performance and compliance combo is unmatched!"</p>
+                                <div class="mt-3 flex items-center space-x-2">
+                                    <div class="w-4 h-4 bg-labAccent rounded-full flex items-center justify-center"><i data-lucide="check" class="w-2 h-2 text-white"></i></div>
+                                    <span class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Protocol_Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute right-full top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-black" style="border-right-color: #000000 !important;"></div>
+                    </div>
+                </div>
+
+                <!-- Case 22 -->
+                <div onclick="openCaseModal('case-22')" onmouseenter="openCaseModal('case-22')" onmouseleave="closeCaseModal('case-22')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative">
+                    <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
+                        <img src="use cases/usecase 22.webp" alt="Bali Business Credit Card Processing" class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <div class="flex items-center space-x-1 mb-3">
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-base text-labBlue mb-2 leading-tight">Credit Card Processing for Bali Based Business</h3>
+                        <p class="text-[12px] text-[#3A5638]/70 leading-relaxed">
+                            Successfully secured and integrated an international credit card payment gateway specifically tailored for a business operating out of Bali, Indonesia, enabling seamless global transactions.
+                        </p>
+                        <!-- Mobile Only Hint -->
+                        <div class="md:hidden flex items-center space-x-2 mt-4 text-labAccent font-bold text-[10px] tracking-widest uppercase">
+                            <span>View Case</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+
+                    <!-- Speech Bubble Tooltip -->
+                    <div id="case-22-bubble" class="fixed md:absolute inset-x-6 md:inset-x-auto md:left-full top-1/2 -translate-y-1/2 md:ml-2.5 w-auto md:w-80 text-white rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,1)] opacity-0 pointer-events-none md:translate-x-4 transition-all duration-300 border border-white/10" style="background: #000000 !important; opacity: 0; z-index: 999 !important;">
+                        <button onclick="event.stopPropagation(); closeCaseModal('case-22')" class="md:hidden absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/10 rounded-full text-white/70">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                        <div class="p-6">
+                            <div class="w-full h-36 bg-[#050505] rounded-xl overflow-hidden mb-5 relative border border-white/10">
+                                <div class="absolute inset-0 transition-opacity duration-1000" id="case-22-slide-1">
+                                    <img src="use cases/usecase 22.webp" alt="Bali Operations" class="w-full h-full object-cover opacity-90">
+                                    <div class="absolute top-3 left-3 bg-black/40 backdrop-blur-md text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">BALI BUSINESS</div>
+                                </div>
+                                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="case-22-slide-2">
+                                    <img src="use cases/use case 22 22.webp" alt="Credit Card Processing Active" class="w-full h-full object-cover opacity-90 scale-105 origin-center">
+                                    <div class="absolute top-3 left-3 bg-labAccent text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">PROCESSING ACTIVE</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-[10px] font-bold text-labAccent tracking-[0.2em] uppercase">Protocol_Archive_22</h4>
+                                <div class="flex space-x-1">
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                </div>
+                            </div>
+                            <p class="text-[13px] font-medium leading-relaxed mb-5 text-white/90">Successfully implemented robust credit card processing for an international client based in Bali.</p>
+                            <div class="bg-white/5 rounded-lg p-4 border border-white/5">
+                                <p class="text-[11px] italic text-white/60 leading-relaxed">"Operating from Bali made securing an international payment processor challenging. Molecular Matrix stepped in and got our credit card gateway approved and fully functional!"</p>
+                                <div class="mt-3 flex items-center space-x-2">
+                                    <div class="w-4 h-4 bg-labAccent rounded-full flex items-center justify-center"><i data-lucide="check" class="w-2 h-2 text-white"></i></div>
+                                    <span class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Protocol_Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute right-full top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-black" style="border-right-color: #000000 !important;"></div>
+                    </div>
+                </div>
+
+                <!-- Case 21 -->
+                <div onclick="openCaseModal('case-21')" onmouseenter="openCaseModal('case-21')" onmouseleave="closeCaseModal('case-21')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative">
+                    <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
+                        <img src="use cases/use case 21.webp" alt="Credit Card Processing Approval" class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <div class="flex items-center space-x-1 mb-3">
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-base text-labBlue mb-2 leading-tight">High-Risk Credit Card Processing Approval</h3>
+                        <p class="text-[12px] text-[#3A5638]/70 leading-relaxed">
+                            Successfully applied and secured full credit card processing approval for a high-risk merchant, ensuring a stable and uninterrupted payment gateway.
+                        </p>
+                        <!-- Mobile Only Hint -->
+                        <div class="md:hidden flex items-center space-x-2 mt-4 text-labAccent font-bold text-[10px] tracking-widest uppercase">
+                            <span>View Case</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+
+                    <!-- Speech Bubble Tooltip -->
+                    <div id="case-21-bubble" class="fixed md:absolute inset-x-6 md:inset-x-auto md:left-full top-1/2 -translate-y-1/2 md:ml-2.5 w-auto md:w-80 text-white rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,1)] opacity-0 pointer-events-none md:translate-x-4 transition-all duration-300 border border-white/10" style="background: #000000 !important; opacity: 0; z-index: 999 !important;">
+                        <button onclick="event.stopPropagation(); closeCaseModal('case-21')" class="md:hidden absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/10 rounded-full text-white/70">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                        <div class="p-6">
+                            <div class="w-full h-36 bg-[#050505] rounded-xl overflow-hidden mb-5 relative border border-white/10">
+                                <div class="absolute inset-0 transition-opacity duration-1000" id="case-21-slide-1">
+                                    <img src="use cases/use case 21.webp" alt="Gateway Application" class="w-full h-full object-cover opacity-90">
+                                    <div class="absolute top-3 left-3 bg-black/40 backdrop-blur-md text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">APPLIED</div>
+                                </div>
+                                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="case-21-slide-2">
+                                    <img src="use cases/usecase 21 21.webp" alt="Processing Approved" class="w-full h-full object-cover opacity-90 scale-105 origin-center">
+                                    <div class="absolute top-3 left-3 bg-labAccent text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">APPROVED</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-[10px] font-bold text-labAccent tracking-[0.2em] uppercase">Protocol_Archive_21</h4>
+                                <div class="flex space-x-1">
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                </div>
+                            </div>
+                            <p class="text-[13px] font-medium leading-relaxed mb-5 text-white/90">Successfully applied for and secured a robust high-risk credit card processing gateway.</p>
+                            <div class="bg-white/5 rounded-lg p-4 border border-white/5">
+                                <p class="text-[11px] italic text-white/60 leading-relaxed">"Getting approved for processing in our industry is tough. Molecular Matrix handled the entire application process and got our high-risk merchant account approved flawlessly!"</p>
+                                <div class="mt-3 flex items-center space-x-2">
+                                    <div class="w-4 h-4 bg-labAccent rounded-full flex items-center justify-center"><i data-lucide="check" class="w-2 h-2 text-white"></i></div>
+                                    <span class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Protocol_Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute right-full top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-black" style="border-right-color: #000000 !important;"></div>
+                    </div>
+                </div>
+
+                <!-- Case 20 -->
+                <div onclick="openCaseModal('case-20')" onmouseenter="openCaseModal('case-20')" onmouseleave="closeCaseModal('case-20')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative">
+                    <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
+                        <img src="use cases/usecase 20.webp" alt="Website Redesign & Processing" class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <div class="flex items-center space-x-1 mb-3">
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-labAccent text-labAccent"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-base text-labBlue mb-2 leading-tight">Full Website Redesign & High-Risk Processing with Apple Pay</h3>
+                        <p class="text-[12px] text-[#3A5638]/70 leading-relaxed">
+                            Executed a complete website redesign for a high-risk merchant, seamlessly integrated with robust credit card processing and Apple Pay functionality to ensure frictionless transactions.
+                        </p>
+                        <!-- Mobile Only Hint -->
+                        <div class="md:hidden flex items-center space-x-2 mt-4 text-labAccent font-bold text-[10px] tracking-widest uppercase">
+                            <span>View Case</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+
+                    <!-- Speech Bubble Tooltip -->
+                    <div id="case-20-bubble" class="fixed md:absolute inset-x-6 md:inset-x-auto md:left-full top-1/2 -translate-y-1/2 md:ml-2.5 w-auto md:w-80 text-white rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,1)] opacity-0 pointer-events-none md:translate-x-4 transition-all duration-300 border border-white/10" style="background: #000000 !important; opacity: 0; z-index: 999 !important;">
+                        <button onclick="event.stopPropagation(); closeCaseModal('case-20')" class="md:hidden absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/10 rounded-full text-white/70">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                        <div class="p-6">
+                            <div class="w-full h-36 bg-[#050505] rounded-xl overflow-hidden mb-5 relative border border-white/10">
+                                <div class="absolute inset-0 transition-opacity duration-1000" id="case-20-slide-1">
+                                    <img src="use cases/usecase 20.webp" alt="Website Redesign" class="w-full h-full object-cover opacity-90">
+                                    <div class="absolute top-3 left-3 bg-black/40 backdrop-blur-md text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">REDESIGN</div>
+                                </div>
+                                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="case-20-slide-2">
+                                    <img src="use cases/use case 20 20.webp" alt="Processing Active" class="w-full h-full object-cover opacity-90 scale-105 origin-center">
+                                    <div class="absolute top-3 left-3 bg-labAccent text-[8px] text-white px-2.5 py-1 font-bold uppercase tracking-widest rounded-full border border-white/10">APPLE PAY</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-[10px] font-bold text-labAccent tracking-[0.2em] uppercase">Protocol_Archive_20</h4>
+                                <div class="flex space-x-1">
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                    <i data-lucide="star" class="w-2.5 h-2.5 fill-labAccent text-labAccent"></i>
+                                </div>
+                            </div>
+                            <p class="text-[13px] font-medium leading-relaxed mb-5 text-white/90">Successfully executed a full website redesign and secured high-risk credit card processing complete with Apple Pay integration.</p>
+                            <div class="bg-white/5 rounded-lg p-4 border border-white/5">
+                                <p class="text-[11px] italic text-white/60 leading-relaxed">"Molecular Matrix completely transformed our online presence and delivered seamless credit card and Apple Pay processing for our high-risk business!"</p>
+                                <div class="mt-3 flex items-center space-x-2">
+                                    <div class="w-4 h-4 bg-labAccent rounded-full flex items-center justify-center"><i data-lucide="check" class="w-2 h-2 text-white"></i></div>
+                                    <span class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Protocol_Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute right-full top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-black" style="border-right-color: #000000 !important;"></div>
+                    </div>
+                </div>
+
                 <!-- Case 19 -->
                 <div onclick="openCaseModal('case-19')" onmouseenter="openCaseModal('case-19')" onmouseleave="closeCaseModal('case-19')" class="blur-reveal border border-black/10 flex flex-col cursor-pointer group hover:border-labAccent/30 transition-all duration-300 relative">
                     <div class="w-full bg-white relative overflow-hidden h-48 flex items-center justify-center border-b border-black/5">
